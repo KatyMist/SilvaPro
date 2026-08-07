@@ -34,10 +34,22 @@
 }
 
 .hero__title {
-  font-size: 85px;
-  color: $color-primary;
+  font-size: 86px;
+  background: linear-gradient(
+    120deg,
+    $color-primary 0%,
+    #5c6b41 22%,
+    #8a6a3f 55%,
+    #4a2f1c 80%,
+    #2b1c12 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
   text-transform: uppercase;
   margin-bottom: 20px;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.12));
 
   @media (max-width: $bp-tablet) {
     font-size: 38px;

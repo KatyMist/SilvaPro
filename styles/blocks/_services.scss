@@ -47,7 +47,15 @@
   overflow: hidden;
   box-shadow: $shadow-card;
   padding-bottom: 24px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  opacity: 0;
+  translate: 0 32px;
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), translate 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+
+    &.is-visible {
+        opacity: 1;
+        translate: 0 0;
+    }
 
   &:hover {
     transform: translateY(-8px);
