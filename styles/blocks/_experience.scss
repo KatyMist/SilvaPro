@@ -1,0 +1,139 @@
+@use '../variables' as *;
+
+.experience-block {
+  padding-block: 96px;
+
+  @media (max-width: $bp-tablet) {
+    padding-block: 56px;
+  }
+}
+
+.experience-block__inner {
+  width: 100%;
+}
+
+// ---------------------------------------------------------------
+// Опыт: заголовок + фото/текст в две колонки + подпись
+// ---------------------------------------------------------------
+.experience {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    'title title'
+    'media text'
+    'signature signature';
+  gap: 16px 40px;
+
+  @media (max-width: $bp-tablet) {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'title'
+      'media'
+      'text'
+      'signature';
+  }
+}
+
+.experience .section-title {
+  grid-area: title;
+  margin-bottom: 24px;
+}
+
+.experience__media {
+  grid-area: media;
+  border-radius: $radius-md;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+}
+
+.experience__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.experience__text {
+  grid-area: text;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+
+  p {
+    font-family: $font-body;
+    font-size: 15px;
+    line-height: 1.6;
+    color: $color-text-secondary;
+  }
+
+  strong {
+    color: $color-dark;
+    font-weight: 600;
+  }
+}
+
+.experience__signature {
+  grid-area: signature;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 16px;
+  padding-top: 24px;
+  border-top: 1px solid $color-border;
+}
+
+.experience__signature-img {
+  height: 40px;
+  width: auto;
+}
+
+.experience__signature-caption {
+  font-family: $font-body;
+  font-size: 13px;
+  color: $color-text-secondary;
+}
+
+// ---------------------------------------------------------------
+// Карточка преимуществ (справа)
+// ---------------------------------------------------------------
+.advantages {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  background-color: $color-bg-card;
+  border-radius: $radius-md;
+  box-shadow: $shadow-card;
+  padding: 32px;
+}
+
+.advantages__item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 4px 16px;
+
+  &:not(:last-child) {
+    padding-bottom: 24px;
+    border-bottom: 1px solid $color-border;
+  }
+}
+
+.advantages__icon {
+  grid-row: 1 / 3;
+  font-size: 24px;
+  color: $color-accent;
+}
+
+.advantages__value {
+  font-family: $font-heading;
+  font-size: 28px;
+  font-weight: 500;
+  color: $color-dark;
+  line-height: 1.1;
+}
+
+.advantages__label {
+  grid-column: 2;
+  font-family: $font-body;
+  font-size: 13px;
+  color: $color-text-secondary;
+}

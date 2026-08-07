@@ -1,0 +1,16 @@
+@use 'variables' as *;
+@use 'fonts';
+@use 'base';
+
+// ==========================================================================
+// БЛОКИ СТРАНИЦЫ
+// Каждый блок — отдельный партиал в styles/blocks/
+// Подключаем по мере вёрстки секций
+// ==========================================================================
+
+@use 'blocks/header';
+@use 'blocks/hero';
+@use 'blocks/services';
+@use 'blocks/experience';
+@use 'blocks/footer';
+@use 'blocks/cta-footer';

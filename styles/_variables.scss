@@ -1,0 +1,41 @@
+// ЦВЕТА
+$color-bg: #EEEAE2;              // основной бежевый фон страницы
+$color-bg-card: #F8F6F1;         // фон карточек (чуть светлее фона)
+$color-white: #FFFFFF;
+
+$color-dark: #2B2E22;            // тёмный текст заголовков / фон футера
+$color-primary: #3F4A32;         // тёмно-зелёный (кнопки, акценты хедера)
+$color-primary-hover: #4E5C3E;
+$color-accent: #7C8A5A;          // оливковый (буллеты, ссылки, иконки)
+
+$color-text: #33352A;            // основной текст
+$color-text-secondary: #6E6E64;  // второстепенный текст
+$color-border: #DFD9CC;          // тонкие разделители/бордеры
+
+
+// ШРИФТЫ
+$font-heading: 'Cormorant SC', serif;
+$font-body: 'Cormorant SC', serif;
+
+
+// РАЗМЕРЫ / СЕТКА
+$container-width: 1200px;
+$container-padding: 24px;
+
+
+$header-height: 88px;
+$header-height-mobile: 64px;
+
+// БРЕЙКПОИНТЫ (используем как $breakpoint в @media (max-width: $bp))
+$bp-laptop: 1199px;
+$bp-between-tablet-laptop: 991px;
+$bp-tablet: 767px;
+$bp-mobile: 479px;
+
+
+// СКРУГЛЕНИЯ / ТЕНИ
+$radius-sm: 8px;
+$radius-md: 16px;
+$radius-pill: 100px;
+
+$shadow-card: 0 4px 24px rgba(43, 46, 34, 0.06);

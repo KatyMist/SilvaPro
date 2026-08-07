@@ -1,0 +1,152 @@
+@use '../variables' as *;
+
+.cta-footer {
+  position: relative;
+  overflow: hidden;
+  padding-block: 96px;
+  background-color: $color-dark; // фолбэк, пока нет картинки
+
+  @media (max-width: $bp-tablet) {
+    padding-block: 56px;
+  }
+}
+
+// ---------------------------------------------------------------
+// Фоновая картинка на всю секцию + затемнение для читаемости текста
+// ---------------------------------------------------------------
+.cta-footer__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(
+    135deg,
+    $color-primary 0%,
+    $color-dark 55%,
+    #1c1f16 100%
+  );
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(
+        200deg,
+        rgba($color-dark, 0.15) 0%,
+        rgba($color-dark, 0.55) 35%,
+        rgba($color-dark, 0.88) 65%,
+        rgba($color-dark, 0.95) 100%
+        ),
+        linear-gradient(
+        to top,
+        rgba($color-dark, 0.5) 0%,
+        rgba($color-dark, 0) 30%
+        );
+    }
+}
+
+.cta-footer__inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  align-items: center;
+  gap: 40px;
+
+  @media (max-width: $bp-between-tablet-laptop) {
+    grid-template-columns: 1fr;
+  }
+}
+
+// ---------------------------------------------------------------
+// Левая часть — заголовок, кнопка, примечание
+// ---------------------------------------------------------------
+.cta-footer__content {
+  color: $color-white;
+}
+
+.cta-footer__title {
+  color: $color-white;
+  font-size: 36px;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+
+  @media (max-width: $bp-tablet) {
+    font-size: 26px;
+  }
+}
+
+.cta-footer__note {
+  font-family: $font-body;
+  font-size: 14px;
+  color: rgba($color-white, 0.75);
+  margin-top: 16px;
+}
+
+// ---------------------------------------------------------------
+// Правая часть — карточка с контактами
+// ---------------------------------------------------------------
+.contacts {
+  position: relative;
+  background-color: $color-bg-card;
+  border-radius: $radius-md;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.25);
+  padding: 40px;
+}
+
+.contacts__title {
+  font-size: 22px;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+.contacts__list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contacts__item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: $font-body;
+  font-size: 15px;
+  color: $color-text;
+
+  a {
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+}
+
+.contacts__icon {
+  flex-shrink: 0;
+  width: 22px;
+  font-size: 16px;
+  text-align: center;
+  color: $color-text-secondary;
+}
+
+.contacts__map {
+  position: absolute;
+  right: 24px;
+  bottom: 24px;
+  width: 140px;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.contacts__map-img {
+  width: 100%;
+  height: auto;
+}

@@ -1,0 +1,22 @@
+{
+  "name": "silvapro",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "predeploy": "vite build",
+    "deploy": "gh-pages -d dist"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "gh-pages": "^6.3.0",
+    "install": "^0.13.0",
+    "npm": "^12.0.2"
+  }
+}
