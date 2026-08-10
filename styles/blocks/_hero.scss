@@ -6,6 +6,13 @@
   padding-top: calc(#{$header-height} + 64px);
   padding-bottom: 96px;
 
+  // Узкий диапазон между десктопом и ноутбуком (1200–1440px) —
+  // картинка ещё видна (не laptop-брейкпоинт), но для неё многовато
+  // места, отсюда пустота перед следующей секцией
+  @media (min-width: #{$bp-laptop + 1px}) and (max-width: 1440px) {
+    padding-bottom: 48px;
+  }
+
   @include laptop {
     overflow: hidden;
     padding-bottom: 72px;
@@ -38,7 +45,7 @@
 // ---------------------------------------------------------------
 .hero__content {
   position: relative;
-  z-index: 1; // текст всегда поверх картинки, независимо от брейкпоинта
+  z-index: 1;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -88,6 +95,11 @@
   min-height: 730px;
   margin-top: -60px;
 
+  @media (min-width: #{$bp-laptop + 1px}) and (max-width: 1440px) {
+    min-height: 520px;
+    margin-top: -30px;
+  }
+
   // С ноутбука — картинка полностью убирается
   @include laptop {
     display: none;
@@ -99,8 +111,4 @@
   height: 100%;
   object-fit: contain;
   object-position: right center;
-  
-  @include laptop {
-    display: none;
-  }
 }
