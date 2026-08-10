@@ -3,10 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Лесная документация — Ульяновская область</title>
+  <title>Документация лесопользователя</title>
   <meta name="description" content="Проекты освоения лесов, декларации и отчёты для лесопользователей Ульяновской области" />
 
   <link rel="stylesheet" href="styles/style.css">
+  <link rel="icon" type="image/svg+xml" href="/icons/favicon.ico" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -24,13 +25,21 @@
         </span>
       </a>
 
-      <nav class="header__nav nav">
+      <nav class="header__nav nav" id="navMenu">
         <ul class="nav__list">
           <li class="nav__item"><a href="#services" class="nav__link">КОМПЛЕКС УСЛУГ</a></li>
           <li class="nav__item"><a href="#experience" class="nav__link">ПРОФЕССИОНАЛЬНЫЙ ПОДХОД</a></li>
           <li class="nav__item"><a href="#contacts" class="nav__link">КОНТАКТЫ</a></li>
         </ul>
+
+        <a href="#contacts" class="nav__cta btn btn--primary">Получить консультацию</a>
       </nav>
+
+      <button type="button" class="header__burger burger" id="burgerBtn" aria-label="Открыть меню" aria-expanded="false">
+        <span class="burger__line"></span>
+        <span class="burger__line"></span>
+        <span class="burger__line"></span>
+      </button>
 
       <a href="https://max.ru/u/f9LHodD0cOIO86hXoOKrQ0ISoDoyjUJIfLt1t3_SzGHrJIwSJzWI2oRuxEo" target="_blank" rel="noopener" class="header__cta btn btn--primary">Получить консультацию</a>
     </div>
@@ -67,12 +76,12 @@
             <div class="service-card__image">
               <img src="/images/2.png" alt="Проекты освоения лесов" />
             </div>
-            <div class="service-card__icon" aria-hidden="true">🌲</div>
+            <img src="/icons/3.svg" alt="" class="service-card__icon" />
             <h3 class="service-card__title">Разработка проектов освоения лесов</h3>
             <ul class="service-card__list">
               <li>Разработка проектов</li>
               <li>Внесение изменений</li>
-              <li>Согласование</li>
+              <li>Сопровождение до положительного заключения</li>
               <li>Консультации</li>
             </ul>
           </li>
@@ -81,11 +90,11 @@
             <div class="service-card__image">
               <img src="/images/3.png" alt="Лесные декларации" />
             </div>
-            <div class="service-card__icon" aria-hidden="true">📄</div>
-            <h3 class="service-card__title">Оформление деклараций</h3>
+            <img src="/icons/4.svg" alt="" class="service-card__icon" />
+            <h3 class="service-card__title">Оформление <br>деклараций</h3>
             <ul class="service-card__list">
               <li>Подготовка деклараций</li>
-              <li>Проверка данных</li>
+              <li>Сверка данных</li>
               <li>Сопровождение подачи</li>
             </ul>
           </li>
@@ -94,7 +103,7 @@
             <div class="service-card__image">
               <img src="/images/4.png" alt="Отчётность" />
             </div>
-            <div class="service-card__icon" aria-hidden="true">📊</div>
+            <img src="/icons/5.svg" alt="" class="service-card__icon" />
             <h3 class="service-card__title">Подготовка лесной отчётности</h3>
             <ul class="service-card__list">
               <li>Отчёт об использовании лесов</li>
@@ -108,12 +117,11 @@
             <div class="service-card__image">
               <img src="/images/5.png" alt="Проектная документация лесных участков" />
             </div>
-            <div class="service-card__icon" aria-hidden="true">📍</div>
+            <img src="/icons/3.svg" alt="" class="service-card__icon" />
             <h3 class="service-card__title">Проектная документация лесных участков</h3>
             <ul class="service-card__list">
-              <li></li>
-              <li></li>
-              <li></li>
+              <li>Подготовка проектной документации лесных участков</li>
+              <li>Сопровождение ПДЛУ в процессе утверждения</li>
             </ul>
           </li>
 
@@ -121,12 +129,13 @@
             <div class="service-card__image">
               <img src="/images/6.png" alt="Консультации" />
             </div>
-            <div class="service-card__icon" aria-hidden="true">💬</div>
+            <img src="/icons/6.svg" alt="" class="service-card__icon" />
             <h3 class="service-card__title">Консультации лесопользователей</h3>
             <ul class="service-card__list">
-              <li>Лесное законодательство</li>
+              <li>Приобретение лесных участков в аренду</li>
+              <li>Проведение санитарных рубок</li>
               <li>Подготовка к проверкам</li>
-              <li>Разбор замечаний</li>
+              <li>Иные вопросы по лесному законодательству</li>
             </ul>
           </li>
         </ul>
@@ -134,8 +143,13 @@
     </section>
 
     <!-- EXPERIENCE + ADVANTAGES -->
-    <section class="experience-block">
-      <div class="container experience-block__inner">
+    <section class="experience-block" id="experience"> 
+      <div class="experience-block__inner">
+
+        <div class="experience-block__decor">
+          <img src="/images/8.png" alt="" />
+        </div>
+
 
         <div class="experience" id="experience">
           <h2 class="section-title">
@@ -149,18 +163,19 @@
           </div>
 
           <div class="experience__text">
-            <p>Более 15 лет работаю в сфере лесопользования и хорошо понимаю все особенности подготовки лесной документации. Знаю требования контролирующих органов и помогаю оформлять документы в соответствии с действующими нормами и правилами.</p>
-            <p>Работаю как <strong>самозанятый специалист</strong>, поэтому каждый проект веду лично — от консультации до подготовки полного комплекта документации. </p>
+            <p>Более 15 лет работаю в сфере лесопользования и хорошо понимаю все особенности подготовки лесной документации. <br>Знаю требования контролирующих органов и помогаю оформлять документы в соответствии с действующими нормами и правилами.<br></p>
+            <p>Работаю как <strong>самозанятый специалист</strong>, поэтому каждый проект веду лично <br>— от консультации до подготовки полного комплекта документации.</br> </p>
              <p>Вы получаете прямое взаимодействие, внимательный подход и ответственное сопровождение на каждом этапе работы.</p>
           </div>
         </div>
       </div>
     </section>
+    
 
     <!-- CTA + CONTACTS -->
     <section class="cta-footer" id="contacts">
       <div class="cta-footer__bg">
-        <img src="/images/cta-bg.jpg" alt="" />
+        <img src="/images/9.png" alt="" />
       </div>
  
       <div class="container cta-footer__inner">
@@ -171,12 +186,10 @@
             стабильная работа вашего лесного бизнеса
           </h2>
  
-          <a href="#contacts" class="btn btn--primary">
-            Обсудить ваш проект
+          <a href="https://max.ru/u/f9LHodD0cOIO86hXoOKrQ0ISoDoyjUJIfLt1t3_SzGHrJIwSJzWI2oRuxEo" target="_blank" rel="noopener" class="btn btn--primary">
+            Получить консультацию
             <span class="btn__arrow" aria-hidden="true">→</span>
           </a>
- 
-          <p class="cta-footer__note">Работаю по всей Ульяновской области</p>
         </div>
  
         <div class="contacts">
@@ -184,30 +197,34 @@
  
           <ul class="contacts__list">
             <li class="contacts__item">
-              <span class="contacts__icon" aria-hidden="true">📞</span>
-              <a href="tel:+70001234567">+7 (917) 615-15-95</a>
-            </li>
-            <li class="contacts__item">
-              <span class="contacts__icon" aria-hidden="true">✉</span>
-              <a href="mailto:info@lesproekt73.ru">info@lesproekt73.ru</a>
-            </li>
-            <li class="contacts__item">
-              <span class="contacts__icon" aria-hidden="true">📍</span>
+              <img src="/icons/9.svg" alt="" class="contacts__icon" />
               <span>Ульяновская область</span>
             </li>
             <li class="contacts__item">
-              <span class="contacts__icon" aria-hidden="true">💬</span>
-              <a href="https://max.ru/u/f9LHodD0cOIO86hXoOKrQ0ISoDoyjUJIfLt1t3_SzGHrJIwSJzWI2oRuxEo" target="_blank" rel="noopener">MAX</a>
+              <img src="/icons/7.svg" alt="" class="contacts__icon" />
+              <a href="tel:+79176151595">+7 (917) 615-15-95</a>
             </li>
             <li class="contacts__item">
-              <span class="contacts__icon" aria-hidden="true">✈</span>
-              <a href="#" target="_blank" rel="noopener">Telegram</a>
+              <img src="/icons/8.svg" alt="" class="contacts__icon" />
+              <a href="mailto:TumanovVova73@yandex.ru">TumanovVova73@yandex.ru</a>
+            </li>
+            <li class="contacts__item">
+              <img src="/icons/10.svg" alt="" class="contacts__icon" />
+              <a href="https://max.ru/u/f9LHodD0cOIO86hXoOKrQ0ISoDoyjUJIfLt1t3_SzGHrJIwSJzWI2oRuxEo" target="_blank" rel="noopener">МАКС</a>
+            </li>
+            <li class="contacts__item">
+              <img src="/icons/10.svg" alt="" class="contacts__icon" />
+              <a href="https://t.me/Tumanov_VA" target="_blank" rel="noopener noreferrer">
+                Telegram
+              </a>
             </li>
           </ul>
  
           <div class="contacts__map">
-            <img src="/images/map.png" alt="Карта Ульяновской области" class="contacts__map-img" />
+            <img src="/images/10.png" alt="Карта Ульяновской области" class="contacts__map-img" />
           </div>
+
+          <p class="cta-footer__note">РАБОТАЮ ПО ВСЕЙ УЛЬЯНОВСКОЙ ОБЛАСТИ</p>
         </div>
  
       </div>
@@ -222,14 +239,27 @@
       </p>
 
       <p class="footer__legal">
-        <a href="https://katymist.github.io/Portfolio/" target="_blank" rel="noopener" class="footer__link">Екатерина Туманова Frontend Developer & Designer</a>
+        <a href="https://katymist.github.io/Portfolio/" target="_blank" rel="noopener" class="footer__dev-link">Екатерина Туманова Frontend Developer & Designer</a>
         <span class="footer__divider">|</span>
-        <a href="https://katymist.github.io/Portfolio/privacy.html" target="_blank" rel="noopener" class="footer__link">Политика конфиденциальности</a>
+        <a href="privacy.html" class="footer__link">Политика конфиденциальности</a>
         <span class="footer__divider">|</span>
         Сайт использует сервис веб-аналитики Яндекс.Метрика
       </p>
     </div>
   </footer>
+
+  <!-- COOKIES BANNER -->
+  <div class="cookies-banner" id="cookiesBanner">
+    <div class="cookies-banner__inner">
+      <p class="cookies-banner__text">
+        Мы используем <a href="privacy.html" class="cookies-banner__link">cookie-файлы</a>
+        для корректной работы сайта и анализа посещаемости
+      </p>
+      <button type="button" class="cookies-banner__btn" id="cookiesAccept">Хорошо</button>
+      <button type="button" class="cookies-banner__close" id="cookiesClose" aria-label="Закрыть">✕</button>
+    </div>
+  </div>
+
   <script type="module" src="/scripts/main.js"></script>
 </body>
 </html>

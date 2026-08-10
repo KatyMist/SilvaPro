@@ -1,12 +1,19 @@
 @use '../variables' as *;
+@use '../mixins' as *;
 
 .hero {
+  position: relative;
   padding-top: calc(#{$header-height} + 64px);
-  padding-bottom: 64px;
+  padding-bottom: 96px;
 
-  @media (max-width: $bp-tablet) {
-    padding-top: calc(#{$header-height-mobile} + 32px);
-    padding-bottom: 40px;
+  @include laptop {
+    overflow: hidden;
+    padding-bottom: 72px;
+  }
+
+  @include tablet {
+    padding-top: calc(#{$header-height-mobile} + 40px);
+    padding-bottom: 56px;
   }
 }
 
@@ -18,19 +25,28 @@
   width: 100%;
   padding-left: $container-padding;
 
-  @media (max-width: $bp-between-tablet-laptop) {
+  // С ноутбука и уже — картинка убирается (см. .hero__media), поэтому
+  // текстовая колонка становится единственной и растягивается на всю ширину
+  @include laptop {
     grid-template-columns: 1fr;
     padding-inline: $container-padding;
   }
 }
 
 // ---------------------------------------------------------------
-// Левая колонка — контент
+// Контент
 // ---------------------------------------------------------------
 .hero__content {
+  position: relative;
+  z-index: 1; // текст всегда поверх картинки, независимо от брейкпоинта
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+
+  @include laptop {
+    align-items: center;
+    text-align: center;
+  }
 }
 
 .hero__title {
@@ -48,69 +64,33 @@
   -webkit-text-fill-color: transparent;
   color: transparent;
   text-transform: uppercase;
-  margin-bottom: 20px;
+  margin: 0;
   filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.12));
 
-  @media (max-width: $bp-tablet) {
-    font-size: 38px;
+  @include laptop {
+    font-size: 58px;
   }
-}
 
-.hero__subtitle {
-  font-family: $font-body;
-  font-size: 21px;
-  line-height: 1.5;
-  color: $color-text-secondary;
-  max-width: 100%;
-  margin-top: 8px;
-  margin-bottom: 32px;
-}
-
-.hero__badges {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px 24px;
-  margin-bottom: 40px;
-
-  @media (max-width: $bp-mobile) {
-    grid-template-columns: 1fr;
+  @include tablet {
+    font-size: 42px;
   }
-}
 
-.hero__badge {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  font-family: $font-body;
-  font-size: 13px;
-  color: $color-text;
-  line-height: 1.35;
-}
-
-.hero__badge-icon {
-  flex-shrink: 0;
-  font-size: 16px;
-  color: $color-accent;
-}
-
-.hero__actions {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-  flex-wrap: wrap;
+  @include mobile {
+    font-size: 32px;
+  }
 }
 
 // ---------------------------------------------------------------
-// Правая колонка — изображение
+// Изображение
 // ---------------------------------------------------------------
 .hero__media {
   position: relative;
   min-height: 730px;
   margin-top: -60px;
 
-  @media (max-width: $bp-between-tablet-laptop) {
-    order: -1;
-    min-height: 400px;
+  // С ноутбука — картинка полностью убирается
+  @include laptop {
+    display: none;
   }
 }
 
@@ -119,8 +99,8 @@
   height: 100%;
   object-fit: contain;
   object-position: right center;
-
-  @media (max-width: $bp-between-tablet-laptop) {
-    object-position: center;
+  
+  @include laptop {
+    display: none;
   }
 }

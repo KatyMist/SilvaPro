@@ -1,4 +1,5 @@
 @use '../variables' as *;
+@use '../mixins' as *;
 
 .header {
   position: fixed;
@@ -6,12 +7,23 @@
   left: 0;
   width: 100%;
   height: $header-height;
-  background-color: rgba($color-bg, 0.92);
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid $color-border;
   z-index: 100;
 
-  @media (max-width: $bp-tablet) {
+  // Блюр — на псевдоэлементе, а не на самом .header:
+  // backdrop-filter/transform на родителе ломает position:fixed у детей
+  // (создаёт для них новый containing block вместо viewport), из-за этого
+  // ломалось мобильное меню
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: rgba($color-bg, 0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid $color-border;
+    z-index: -1;
+  }
+
+  @include tablet {
     height: $header-height-mobile;
   }
 }
@@ -24,8 +36,9 @@
   gap: 24px;
 }
 
-
+// ---------------------------------------------------------------
 // Логотип
+// ---------------------------------------------------------------
 .logo {
   display: flex;
   align-items: center;
@@ -34,10 +47,15 @@
 }
 
 .logo__icon {
-  width: 48px;
-  height: 48px;
+  width: 90px;
+  height: 90px;
   object-fit: contain;
   flex-shrink: 0;
+
+  @include tablet {
+    width: 56px;
+    height: 56px;
+  }
 }
 
 .logo__text {
@@ -53,6 +71,10 @@
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: $color-dark;
+
+  @include mobile {
+    font-size: 13px;
+  }
 }
 
 .logo__subtitle {
@@ -61,14 +83,38 @@
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: $color-text-secondary;
+
+  @include mobile {
+    font-size: 11px;
+  }
 }
 
 // ---------------------------------------------------------------
-// Навигация
+// Навигация — на десктопе обычное меню в строку,
+// с laptop (≤1199px) уходит в выпадающую панель под бургер
 // ---------------------------------------------------------------
 .nav {
-  @media (max-width: $bp-between-tablet-laptop) {
-    display: none; // на планшете/мобиле — бургер (добавим позже)
+  @include laptop {
+    position: fixed;
+    top: $header-height-mobile;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $color-bg;
+    padding: 32px $container-padding;
+    overflow-y: auto;
+    transform: translateX(100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+      opacity 0.35s ease,
+      visibility 0.35s;
+
+    &.is-open {
+      transform: translateX(0);
+      opacity: 1;
+      visibility: visible;
+    }
   }
 }
 
@@ -76,10 +122,40 @@
   display: flex;
   align-items: center;
   gap: 28px;
+
+  @include laptop {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+}
+
+.nav__item {
+  @include laptop {
+    opacity: 0;
+    translate: 0 16px;
+    transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+      translate 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+
+    // Стаггер — каждый следующий пункт появляется чуть позже
+    @for $i from 1 through 6 {
+      &:nth-child(#{$i}) {
+        transition-delay: #{$i * 0.07}s;
+      }
+    }
+  }
+}
+
+.nav.is-open .nav__item {
+  @include laptop {
+    opacity: 1;
+    translate: 0 0;
+  }
 }
 
 .nav__link {
   position: relative;
+  display: inline-block;
   font-family: $font-body;
   font-size: 15px;
   font-weight: 500;
@@ -88,6 +164,19 @@
   color: $color-text;
   padding-bottom: 4px;
   transition: color 0.25s ease;
+
+  @include laptop {
+    font-size: 22px;
+    padding: 12px 20px;
+    text-align: center;
+    border-radius: $radius-pill;
+    transition: color 0.25s ease, background-color 0.25s ease, transform 0.25s ease;
+
+    &:hover {
+      background-color: rgba($color-primary, 0.08);
+      transform: translateY(-2px);
+    }
+  }
 
   // Анимированное подчёркивание
   &::after {
@@ -101,6 +190,10 @@
     transform: scaleX(0);
     transform-origin: right;
     transition: transform 0.3s ease;
+
+    @include laptop {
+      display: none;
+    }
   }
 
   &:hover {
@@ -112,7 +205,6 @@
     }
   }
 
-  // Подсветка активного раздела (класс навешивается через JS при скролле)
   &.is-active {
     color: $color-primary;
     text-shadow: 0 0 12px rgba($color-primary, 0.35);
@@ -124,13 +216,91 @@
   }
 }
 
+// Кнопка "Получить консультацию" внутри мобильного меню (дублирует header__cta,
+// которая на этом брейкпоинте скрыта)
+.nav__cta {
+  display: none;
+
+  @include laptop {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 280px;
+    margin-top: 16px;
+    margin-inline: auto;
+    opacity: 0;
+    translate: 0 16px;
+    transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+      translate 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    transition-delay: 0.5s;
+
+    &:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 10px 28px rgba($color-primary, 0.35);
+    }
+  }
+}
+
+.nav.is-open .nav__cta {
+  @include laptop {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+// ---------------------------------------------------------------
+// Бургер-кнопка — видна только с laptop (≤1199px)
+// ---------------------------------------------------------------
+.burger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  z-index: 101;
+
+  @include laptop {
+    display: flex;
+  }
+}
+
+.burger__line {
+  width: 22px;
+  height: 2px;
+  background-color: $color-dark;
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+// Превращение в крестик, когда меню открыто
+.burger.is-active {
+  .burger__line:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .burger__line:nth-child(2) {
+    opacity: 0;
+  }
+
+  .burger__line:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+}
+
 // ---------------------------------------------------------------
 // CTA в шапке
 // ---------------------------------------------------------------
 .header__cta {
   flex-shrink: 0;
 
-  @media (max-width: $bp-tablet) {
+  @include laptop {
+    display: none; // на мобильной панели меню будет своя кнопка (см. ниже)
+  }
+
+  @include tablet {
     padding: 10px 18px;
     font-size: 13px;
   }

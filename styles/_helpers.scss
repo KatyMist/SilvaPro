@@ -1,0 +1,55 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+// ==========================================================================
+// СКРЫТИЕ / ПОКАЗ ПО БРЕЙКПОИНТАМ
+// ==========================================================================
+.visually-hidden {
+  @include visually-hidden;
+}
+
+// Скрыть элемент только на мобилке (≤479px)
+.hidden-mobile {
+  @include mobile {
+    display: none !important;
+  }
+}
+
+// Показать элемент только на мобилке (≤479px), на остальных — скрыт
+.visible-mobile {
+  @include mobile-above {
+    display: none !important;
+  }
+}
+
+// Скрыть элемент только на планшете и уже (≤767px)
+.hidden-tablet {
+  @include tablet {
+    display: none !important;
+  }
+}
+
+// Показать элемент только на планшете и уже (≤767px)
+.visible-tablet {
+  @include tablet-above {
+    display: none !important;
+  }
+}
+
+// ==========================================================================
+// СНИЖЕННАЯ АНИМАЦИЯ — для пользователей с prefers-reduced-motion
+// Добавляй сюда классы декоративных элементов с бесконечной анимацией,
+// если такие появятся (сейчас на сайте таких нет — только hover/scroll-reveal,
+// которые уже мгновенно завершаются и не мешают доступности)
+// ==========================================================================
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,69 @@
+@use 'variables' as *;
+
+// ==========================================================================
+// БРЕЙКПОИНТЫ — миксины поверх переменных из _variables.scss
+// ==========================================================================
+// Использование: .block { @include tablet { ... } }
+
+// Большие ноутбучные экраны и уже (≤1199px)
+@mixin laptop {
+  @media (max-width: #{$bp-laptop}) {
+    @content;
+  }
+}
+
+// Промежуточный брейкпоинт между планшетом и ноутбуком (≤991px)
+@mixin tablet-laptop {
+  @media (max-width: #{$bp-between-tablet-laptop}) {
+    @content;
+  }
+}
+
+// Планшет (≤767px)
+@mixin tablet {
+  @media (max-width: #{$bp-tablet}) {
+    @content;
+  }
+}
+
+// Телефон (≤479px)
+@mixin mobile {
+  @media (max-width: #{$bp-mobile}) {
+    @content;
+  }
+}
+
+// Маленький телефон (≤374px) — iPhone SE и подобные
+@mixin mobile-small {
+  @media (max-width: 374px) {
+    @content;
+  }
+}
+
+// Инверсия — «от планшета и шире» и т.д., пригождается для hover/desktop-only стилей
+@mixin tablet-above {
+  @media (min-width: #{$bp-tablet + 1px}) {
+    @content;
+  }
+}
+
+@mixin mobile-above {
+  @media (min-width: #{$bp-mobile + 1px}) {
+    @content;
+  }
+}
+
+// ==========================================================================
+// ПРОЧИЕ ХЕЛПЕРЫ
+// ==========================================================================
+@mixin visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
