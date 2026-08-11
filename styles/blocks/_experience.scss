@@ -26,10 +26,6 @@
   }
 
   @media (max-width: $bp-laptop) {
-    width: 220px;
-  }
-
-  @media (max-width: $bp-between-tablet-laptop) {
     display: none;
   }
 }
@@ -42,7 +38,7 @@
   padding-right: calc(60px + 220px);
 
   @media (max-width: $bp-laptop) {
-    padding-right: calc(60px + 160px);
+    padding-right: 60px;
   }
 
   @media (max-width: $bp-between-tablet-laptop) {
@@ -62,13 +58,17 @@
     'signature signature';
   gap: 16px 48px;
 
-  @media (max-width: $bp-tablet) {
+  @media (max-width: 1440px) and (min-width: #{$bp-laptop + 1px}) {
+    grid-template-columns: 340px 1fr;
+  }
+
+  @media (max-width: $bp-laptop) {
     grid-template-columns: 1fr;
     grid-template-areas:
       'title'
-      'media'
       'text'
       'signature';
+    justify-items: center;
   }
 }
 
@@ -92,6 +92,10 @@
   border-radius: $radius-md;
   overflow: hidden;
   aspect-ratio: 4 / 2;
+
+  @media (max-width: $bp-laptop) {
+    display: none;
+  }
 
   &::after {
     content: '';
@@ -133,6 +137,18 @@
     font-size: 18px;
     line-height: 1.65;
     color: $color-text-secondary;
+
+    @media (max-width: 1440px) {
+      font-size: 16px;
+    }
+
+    @media (max-width: $bp-laptop) {
+      font-size: 15px;
+    }
+
+    @media (max-width: $bp-tablet) {
+      font-size: 14px;
+    }
   }
 
   strong {
@@ -145,12 +161,16 @@
   grid-area: signature;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 16px;
   margin-top: 16px;
   padding-top: 24px;
   border-top: 1px solid $color-border;
-}
 
+  @media (max-width: $bp-laptop) {
+    text-align: center;
+  }
+}
 .experience__signature-img {
   height: 40px;
   width: auto;
