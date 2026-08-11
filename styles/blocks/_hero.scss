@@ -49,6 +49,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  min-width: 0;
 
   @include laptop {
     align-items: center;
@@ -84,6 +85,10 @@
 
   @include mobile {
     font-size: 32px;
+  }
+
+  @include mobile-small {
+    font-size: 22px;
   }
 }
 

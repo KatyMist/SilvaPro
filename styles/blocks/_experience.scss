@@ -131,6 +131,7 @@
   align-items: center;
   gap: 18px;
   text-align: center;
+  min-width: 0;
 
   p {
     font-family: $font-body;
