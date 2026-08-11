@@ -8,17 +8,16 @@
   width: 100%;
   height: $header-height;
   z-index: 100;
+  transform: translateZ(0); // форсируем отдельный композитный слой — фикс для iOS Safari
+  will-change: transform;
 
-  // Блюр — на псевдоэлементе, а не на самом .header:
-  // backdrop-filter/transform на родителе ломает position:fixed у детей
-  // (создаёт для них новый containing block вместо viewport), из-за этого
-  // ломалось мобильное меню
   &::before {
     content: '';
     position: absolute;
     inset: 0;
     background-color: rgba($color-bg, 0.92);
     backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px); // без этого блюр не работает в Safari/iOS
     border-bottom: 1px solid $color-border;
     z-index: -1;
   }

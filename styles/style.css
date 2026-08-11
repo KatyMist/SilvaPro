@@ -297,6 +297,8 @@ h1, h2, h3 {
   width: 100%;
   height: 88px;
   z-index: 100;
+  transform: translateZ(0);
+  will-change: transform;
 }
 .header::before {
   content: "";
@@ -304,6 +306,7 @@ h1, h2, h3 {
   inset: 0;
   background-color: rgba(238, 234, 226, 0.92);
   backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   border-bottom: 1px solid #DFD9CC;
   z-index: -1;
 }
