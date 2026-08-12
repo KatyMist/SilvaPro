@@ -3,19 +3,35 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Политика конфиденциальности — Лесная документация</title>
-  <meta name="description" content="Политика конфиденциальности и использования cookies сайта «Лесная документация»" />
 
+  <title>Политика конфиденциальности | Лесная документация</title>
+  <meta name="description" content="Политика конфиденциальности сайта «Лесная документация». Обработка персональных данных, использование файлов cookie.">
+  <meta name="robots" content="noindex, follow">
+  <link rel="canonical" href="https://ulles.ru/privacy.html" />
+
+  <link rel="stylesheet" href="styles/style.css">
+  <link rel="icon" type="image/svg+xml" href="/icons/favicon.ico" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+  <!-- PRELOADER -->
+  <div class="preloader" id="preloader">
+    <div class="preloader__inner">
+      <img src="/icons/1.svg" alt="" class="preloader__logo" />
+      <p class="preloader__title">Лесная документация</p>
+      <p class="preloader__subtitle">Ульяновская область</p>
+      <div class="preloader__bar-wrap">
+        <div class="preloader__bar" id="preloaderBar"></div>
+      </div>
+    </div>
+  </div>
 
   <!-- HEADER -->
   <header class="header">
     <div class="container header__inner">
-      <a href="index.html" class="header__logo logo">
+      <a href="/" class="header__logo logo">
         <img src="/icons/1.svg" alt="" class="logo__icon" />
         <span class="logo__text">
           <span class="logo__title">Лесная документация</span>
@@ -23,7 +39,23 @@
         </span>
       </a>
 
-      <a href="index.html#contacts" class="header__cta btn btn--primary">Получить консультацию</a>
+      <nav class="header__nav nav" id="navMenu">
+        <ul class="nav__list">
+          <li class="nav__item"><a href="/#services" class="nav__link">КОМПЛЕКС УСЛУГ</a></li>
+          <li class="nav__item"><a href="/#experience" class="nav__link">ПРОФЕССИОНАЛЬНЫЙ ПОДХОД</a></li>
+          <li class="nav__item"><a href="/#contacts" class="nav__link">КОНТАКТЫ</a></li>
+        </ul>
+
+        <a href="/#contacts" class="nav__cta btn btn--primary">Получить консультацию</a>
+      </nav>
+
+      <button type="button" class="header__burger burger" id="burgerBtn" aria-label="Открыть меню" aria-expanded="false">
+        <span class="burger__line"></span>
+        <span class="burger__line"></span>
+        <span class="burger__line"></span>
+      </button>
+
+      <a href="https://max.ru/u/f9LHodD0cOIO86hXoOKrQ0ISoDoyjUJIfLt1t3_SzGHrJIwSJzWI2oRuxEo" target="_blank" rel="noopener" class="header__cta btn btn--primary">Получить консультацию</a>
     </div>
   </header>
 
