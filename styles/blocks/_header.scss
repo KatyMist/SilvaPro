@@ -96,19 +96,26 @@
 .nav {
   @include laptop {
     position: fixed;
-    top: $header-height-mobile;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    inset: 0;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    padding-top: $header-height-mobile + 32px;
+    padding-inline: $container-padding;
+    padding-bottom: 32px;
     background-color: $color-bg;
-    padding: 32px $container-padding;
     overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     transform: translateX(100%);
     opacity: 0;
     visibility: hidden;
     transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
       opacity 0.35s ease,
       visibility 0.35s;
+    z-index: 99;
 
     &.is-open {
       transform: translateX(0);
