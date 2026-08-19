@@ -1,5 +1,7 @@
 // Показывает баннер с cookies при первом визите (через небольшую задержку),
-// после нажатия "Хорошо" больше не показывает — согласие хранится в localStorage
+// после нажатия "Хорошо" больше не показывает — согласие хранится в localStorage.
+// Крестик просто закрывает баннер на сейчас, без сохранения согласия —
+// при следующем визите баннер появится снова.
 
 const STORAGE_KEY = 'cookies-consent-accepted';
 const SHOW_DELAY_MS = 800;
@@ -18,11 +20,15 @@ export function initCookiesBanner() {
     banner.classList.add('is-visible');
   }, SHOW_DELAY_MS);
 
-  const dismiss = () => {
+  const dismissWithConsent = () => {
     banner.classList.remove('is-visible');
     localStorage.setItem(STORAGE_KEY, 'true');
   };
 
-  acceptBtn.addEventListener('click', dismiss);
-  closeBtn.addEventListener('click', dismiss);
+  const dismissWithoutConsent = () => {
+    banner.classList.remove('is-visible');
+  };
+
+  acceptBtn.addEventListener('click', dismissWithConsent);
+  closeBtn.addEventListener('click', dismissWithoutConsent);
 }

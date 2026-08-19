@@ -6,6 +6,7 @@ import { initExperienceReveal } from './experience-reveal.js';
 import { initCookiesBanner } from './cookies-banner.js';
 import { initBurgerMenu } from './burger-menu.js';
 import { initPreloader } from './preloader.js';
+import { initAnchorLinks } from './anchor-links.js';
 
 initNavHighlight();
 initServiceCardsReveal();
@@ -13,3 +14,4 @@ initExperienceReveal();
 initCookiesBanner();
 initBurgerMenu();
 initPreloader();
+initAnchorLinks();

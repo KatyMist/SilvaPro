@@ -91,4 +91,8 @@
     color: $color-dark;
     background-color: $color-border;
   }
+
+  @media (max-width: $bp-mobile) {
+    align-self: center;
+  }
 }
