@@ -1,8 +1,3 @@
-// Показывает баннер с cookies при первом визите (через небольшую задержку),
-// после нажатия "Хорошо" больше не показывает — согласие хранится в localStorage.
-// Крестик просто закрывает баннер на сейчас, без сохранения согласия —
-// при следующем визите баннер появится снова.
-
 const STORAGE_KEY = 'cookies-consent-accepted';
 const SHOW_DELAY_MS = 800;
 
@@ -14,7 +9,11 @@ export function initCookiesBanner() {
   if (!banner || !acceptBtn || !closeBtn) return;
 
   const alreadyAccepted = localStorage.getItem(STORAGE_KEY) === 'true';
-  if (alreadyAccepted) return;
+
+  if (alreadyAccepted) {
+    window.initYandexMetrika?.();
+    return;
+  }
 
   setTimeout(() => {
     banner.classList.add('is-visible');
@@ -23,6 +22,7 @@ export function initCookiesBanner() {
   const dismissWithConsent = () => {
     banner.classList.remove('is-visible');
     localStorage.setItem(STORAGE_KEY, 'true');
+    window.initYandexMetrika?.();
   };
 
   const dismissWithoutConsent = () => {
