@@ -11,9 +11,22 @@ export function initServiceCardsReveal() {
         if (!entry.isIntersecting) return;
 
         const index = Array.from(cards).indexOf(entry.target);
-        entry.target.style.transitionDelay = `${index * STAGGER_STEP_MS}ms`;
-        entry.target.classList.add('is-visible');
-        observer.unobserve(entry.target);
+        const card = entry.target;
+
+        card.style.transitionDelay = `${index * STAGGER_STEP_MS}ms`;
+        card.classList.add('is-visible');
+
+        // сбрасываем delay после завершения анимации появления,
+        // чтобы он не влиял на hover
+        card.addEventListener(
+          'transitionend',
+          () => {
+            card.style.transitionDelay = '';
+          },
+          { once: true }
+        );
+
+        observer.unobserve(card);
       });
     },
     { threshold: 0.15 }
