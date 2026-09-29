@@ -13,14 +13,22 @@
     padding-bottom: 48px;
   }
 
+  // Ноутбук / планшет / мобилка: картинки нет, поэтому hero занимает
+  // весь первый экран, заголовок стоит строго по центру, а следующая
+  // секция («Комплекс услуг») появляется только при прокрутке
   @include laptop {
     overflow: hidden;
-    padding-bottom: 72px;
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    min-height: 100svh;
+    padding-top: $header-height;
+    padding-bottom: 0;
   }
 
   @include tablet {
-    padding-top: calc(#{$header-height-mobile} + 40px);
-    padding-bottom: 56px;
+    padding-top: $header-height-mobile;
+    padding-bottom: 0;
   }
 }
 
@@ -77,6 +85,7 @@
 
   @include laptop {
     font-size: 58px;
+    text-wrap: balance;
   }
 
   @include tablet {
