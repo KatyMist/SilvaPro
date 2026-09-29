@@ -51,7 +51,7 @@
 
 # 🇷🇺 Русский
 
-## 🌿 О проекте
+## О проекте
 
 **SilvaPro** — одностраничный сайт-визитка для частного специалиста, который более 15 лет занимается лесопользованием и сопровождает бизнес в Ульяновской области. Задача сайта — коротко и солидно рассказать об услугах и привести клиента к консультации.
 
@@ -67,7 +67,7 @@
 
 ---
 
-## ✨ Особенности
+## Особенности
 
 - 🎬 **Прелоадер** с логотипом и анимированной полосой загрузки
 - 📱 **Адаптивная вёрстка** — от мобильных до широких экранов, бургер-меню с блокировкой скролла
@@ -80,7 +80,7 @@
 
 ---
 
-## 🛠 Стек
+## Стек
 
 | Технология | Назначение |
 |---|---|
@@ -92,7 +92,7 @@
 
 ---
 
-## 📁 Структура
+## Структура
 
 ```
 SilvaPro/
@@ -120,7 +120,7 @@ SilvaPro/
 
 ---
 
-## 🚀 Запуск локально
+## Запуск локально
 
 ```bash
 git clone https://github.com/KatyMist/SilvaPro.git
@@ -135,7 +135,7 @@ npm run deploy    # сборка + публикация на GitHub Pages
 
 ---
 
-## 👩‍💻 Автор
+## Автор
 
 <table>
   <tr>
@@ -156,7 +156,7 @@ npm run deploy    # сборка + публикация на GitHub Pages
 
 # 🇬🇧 English
 
-## 🌿 About
+## About
 
 **SilvaPro** is a single-page business card website for an independent specialist with over 15 years of experience in forest management who supports businesses across the Ulyanovsk Region. The site's goal is to present the services concisely and professionally, and to lead visitors to book a consultation.
 
@@ -172,7 +172,7 @@ npm run deploy    # сборка + публикация на GitHub Pages
 
 ---
 
-## ✨ Features
+## Features
 
 - 🎬 **Preloader** with the logo and an animated progress bar
 - 📱 **Responsive layout** — from mobile to wide screens, burger menu with scroll lock
@@ -185,7 +185,7 @@ npm run deploy    # сборка + публикация на GitHub Pages
 
 ---
 
-## 🛠 Tech stack
+## Tech stack
 
 | Technology | Purpose |
 |---|---|
@@ -197,7 +197,7 @@ npm run deploy    # сборка + публикация на GitHub Pages
 
 ---
 
-## 📁 Project structure
+## Project structure
 
 ```
 SilvaPro/
@@ -225,7 +225,7 @@ SilvaPro/
 
 ---
 
-## 🚀 Running locally
+## Running locally
 
 ```bash
 git clone https://github.com/KatyMist/SilvaPro.git
@@ -240,7 +240,7 @@ npm run deploy    # build + publish to GitHub Pages
 
 ---
 
-## 👩‍💻 Author
+## Author
 
 <table>
   <tr>
