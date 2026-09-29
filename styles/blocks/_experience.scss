@@ -77,11 +77,9 @@
   margin-bottom: 24px;
   margin-right: -220px;
 
+  // С ноутбука и уже фото убирается, колонка одна — сдвиг не нужен,
+  // иначе заголовок уезжает от центра
   @media (max-width: $bp-laptop) {
-    margin-right: -160px;
-  }
-
-  @media (max-width: $bp-between-tablet-laptop) {
     margin-right: 0;
   }
 }

@@ -1,4 +1,4 @@
-import '../styles/style.scss';
+// Стили подключены в index.html через styles/style.css (импорт .scss ломал запуск через Live Server)
 
 import { initNavHighlight } from './nav-highlight.js';
 import { initServiceCardsReveal } from './service-cards-reveal.js';
