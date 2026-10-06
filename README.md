@@ -1,262 +1,133 @@
 <a id="top"></a>
- 
+
 <div align="center">
-  <img src="icons/1.svg" alt="SilvaPro logo" width="96" />
-  <h1>SilvaPro · Лесная документация</h1>
-  <p>
-    <b>Лендинг для специалиста по лесной документации в Ульяновской области</b><br/>
-    <i>A landing page for a forestry documentation specialist in the Ulyanovsk Region</i>
-  </p>
-  <p>Проекты освоения лесов · лесные декларации · отчётность 1-ИЛ, 1-ОЛ, 1-ЗЛ, 1-ВЛ</p>
-  <p>
-    <a href="https://ulles.ru/"><img src="https://img.shields.io/badge/%D0%9E%D1%82%D0%BA%D1%80%D1%8B%D1%82%D1%8C_%D1%81%D0%B0%D0%B9%D1%82-ulles.ru-1f3a2b?style=for-the-badge&labelColor=0d1f16&logo=googlechrome&logoColor=9fd3a8" alt="ulles.ru" /></a>
-  </p>
-  <p>
-    <img src="https://skillicons.dev/icons?i=html,sass,js,vite,github&theme=dark" alt="HTML · SCSS · JavaScript · Vite · GitHub Pages" />
-  </p>
-  <p>
-    <a href="#ru"><img src="https://img.shields.io/badge/RU-%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9-1f3a2b?style=flat-square&labelColor=0d1f16" alt="Русский" /></a>
-    <a href="#en"><img src="https://img.shields.io/badge/EN-English-1f3a2b?style=flat-square&labelColor=0d1f16" alt="English" /></a>
-  </p>
+
+<img src="icons/1.svg" alt="SilvaPro logo" width="88">
+
+# SilvaPro — лесная документация
+# SilvaPro — Forestry Documentation
+
+**Сайт-визитка специалиста по лесопользованию · Ульяновская область**<br>
+**Business card website for a forest management specialist · Ulyanovsk Region, Russia**
+
+<sub>Проекты освоения лесов · лесные декларации · отчётность 1-ИЛ, 1-ОЛ, 1-ЗЛ, 1-ВЛ</sub>
+
+<a href="https://ulles.ru/"><img src="https://img.shields.io/badge/ОТКРЫТЬ_САЙТ-ULLES.RU-3f7d4f?style=for-the-badge&logo=googlechrome&logoColor=white&labelColor=0d1f16" alt="Открыть сайт"></a>
+
+<img src="https://skillicons.dev/icons?i=html,sass,js,vite,github" alt="HTML, Sass, JavaScript, Vite, GitHub">
+
+<img src="https://img.shields.io/badge/RU-Русский-3f7d4f?labelColor=0d1f16" alt="Русский"> <img src="https://img.shields.io/badge/EN-English-3f7d4f?labelColor=0d1f16" alt="English">
+
+<a href="https://ulles.ru/">
+  <img src="https://github.com/user-attachments/assets/18410a23-218a-4152-a8dd-7b16db9bbaed" alt="Home page on desktop and smartphone" width="100%">
+</a>
+
 </div>
 
+<br>
 
 ---
+
+## О сайте · About
+
+Одностраничный сайт-визитка для частного специалиста, который более 15 лет занимается лесопользованием и сопровождает бизнес в Ульяновской области. Задача — коротко и солидно рассказать об услугах и привести клиента к консультации.
+
+A single-page business card website for an independent specialist with over 15 years of experience in forest management who supports businesses across the Ulyanovsk Region. Its goal is to present the services concisely and professionally and lead visitors to book a consultation. The website itself is in Russian.
+
+| Раздел · Section | Что внутри · Content |
+|---|---|
+| [Hero](https://ulles.ru/) | Экспертное сопровождение лесопользования<br>Expert support for forest users |
+| [Комплекс услуг · Services](https://ulles.ru/#services) | Лесная отчётность, декларации, проектная документация, консультации<br>Forest reporting, declarations, forest plot design documentation, consultations |
+| [Профессиональный подход · Approach](https://ulles.ru/#experience) | Опыт, формат работы, преимущества<br>Experience, way of working, key advantages |
+| [Контакты · Contacts](https://ulles.ru/#contacts) | Телефон, e-mail, MAX, Telegram, карта области<br>Phone, email, MAX, Telegram, regional map |
+| Юридические страницы · Legal pages | Политика конфиденциальности, пользовательское соглашение, 404<br>Privacy policy, terms of use, 404 |
 
 ## Скриншоты · Screenshots
 
-<!-- Положи файлы в docs/screenshots/ и поправь имена при необходимости -->
+<details open>
+<summary><b>Комплекс услуг · Services</b></summary>
+<br>
+<img src="https://github.com/user-attachments/assets/053a8b73-7a16-4f90-9a60-edcbe5427236" alt="Services section" width="100%">
+</details>
 
-<p align="center">
-  <img width="1025" height="540" alt="Снимок экрана — 2026-09-29 в 10 29 37" src="https://github.com/user-attachments/assets/0a181dba-04fc-45f9-bc77-94ad493c4cf9" />
-</p>
+<details>
+<summary><b>Профессиональный подход · Approach</b></summary>
+<br>
+<img src="https://github.com/user-attachments/assets/1e217c67-fd6f-471e-83db-e9cc73afac1d" alt="Approach section" width="100%">
+</details>
 
-<table>
-  <tr>
-    <img width="950" height="394" alt="Снимок экрана — 2026-09-29 в 10 30 46" src="https://github.com/user-attachments/assets/053a8b73-7a16-4f90-9a60-edcbe5427236" alt="Комплекс услуг"  />
-    <img width="967" height="334" alt="Снимок экрана — 2026-09-29 в 10 35 41" src="https://github.com/user-attachments/assets/1e217c67-fd6f-471e-83db-e9cc73afac1d" />
-  </tr>
-</table>
+<details>
+<summary><b>Мобильная версия · Mobile Version</b></summary>
+<br>
+<img src="https://github.com/user-attachments/assets/3dbea773-d528-47c7-8aa5-8723776708ca" alt="Mobile version" width="100%">
+</details>
 
-<p align="center">
-  
-  <img width="272" height="521" alt="Снимок экрана — 2026-09-29 в 10 56 55" src="https://github.com/user-attachments/assets/f5c7be6f-3bc8-4feb-8b1a-ec783f8f9260" />
-  <img width="273" height="520" alt="Снимок экрана — 2026-09-29 в 10 57 12" src="https://github.com/user-attachments/assets/4959096f-c858-490c-8008-f661d9689fd6" />
-  <img width="227" height="526" alt="Снимок экрана — 2026-09-29 в 10 57 43" src="https://github.com/user-attachments/assets/34443333-b290-4c74-b625-ff1a760fa7dc" />
-</p>
+## Возможности · Features
 
----
-
-<a id="ru"></a>
-
-# 🇷🇺 Русский
-
-## О проекте
-
-**SilvaPro** — одностраничный сайт-визитка для частного специалиста, который более 15 лет занимается лесопользованием и сопровождает бизнес в Ульяновской области. Задача сайта — коротко и солидно рассказать об услугах и привести клиента к консультации.
-
-**Разделы страницы:**
-
-| Блок | Что внутри |
+| Русский | English |
 |---|---|
-| **Hero** | Экспертное сопровождение лесопользования |
-| **Комплекс услуг** | Лесная отчётность, декларации, проектная документация лесных участков, консультации |
-| **Профессиональный подход** | Опыт, формат работы, преимущества |
-| **Контакты** | Телефон, e-mail, MAX, Telegram, карта области |
-| **Юридические страницы** | Политика конфиденциальности, пользовательское соглашение, 404 |
+| **Прелоадер** с логотипом и анимированной полосой загрузки | **Preloader** with the logo and an animated progress bar |
+| **Адаптивная вёрстка**, бургер-меню с блокировкой скролла | **Responsive layout**, burger menu with scroll lock |
+| **Подсветка активного пункта меню** при прокрутке (`IntersectionObserver`) | **Active menu item highlighting** on scroll (`IntersectionObserver`) |
+| **Анимации появления**: карточки услуг со ступенчатой задержкой, поэтапный reveal блока «Опыт» | **Reveal animations**: staggered service cards, step-by-step reveal of the Experience block |
+| **Плавный скролл** по якорям без мусора в адресной строке | **Smooth anchor scrolling** without cluttering the address bar |
+| **Cookie-баннер**: Яндекс.Метрика подключается только после согласия | **Cookie banner**: Yandex.Metrica loads only after consent |
+| **SEO**: мета-теги, Open Graph, Schema.org (`ProfessionalService`), sitemap, robots.txt, canonical | **SEO**: meta tags, Open Graph, Schema.org (`ProfessionalService`), sitemap, robots.txt, canonical |
+| **Политика конфиденциальности** и пользовательское соглашение | **Privacy policy** and terms of use |
+| **Собственный домен** через GitHub Pages | **Custom domain** via GitHub Pages |
 
----
+## Технологии · Tech Stack
 
-## Особенности
-
-- 🎬 **Прелоадер** с логотипом и анимированной полосой загрузки
-- 📱 **Адаптивная вёрстка** — от мобильных до широких экранов, бургер-меню с блокировкой скролла
-- 🧭 **Подсветка активного пункта меню** при прокрутке (`IntersectionObserver`)
-- 🪄 **Анимации появления** — карточки услуг со ступенчатой задержкой, блок «Опыт» с поэтапным reveal
-- 🔗 **Плавный скролл** по якорям без мусора в адресной строке
-- 🍪 **Cookie-баннер с согласием** — Яндекс.Метрика подключается **только после** нажатия «Хорошо»
-- 🔍 **SEO**: мета-теги, Open Graph, `schema.org` (`ProfessionalService`), `sitemap.xml`, `robots.txt`, canonical
-- 🖋 Типографика: **Cormorant Garamond** + **Inter**, локальные шрифты Cormorant SC
-
----
-
-## Стек
-
-| Технология | Назначение |
+| | |
 |---|---|
-| **HTML5** | Семантическая разметка |
-| **SCSS** | Стили по методологии **БЭМ**, разбиты на блоки |
-| **Vanilla JS (ES-модули)** | Интерактив без фреймворков |
-| **Vite** | Сборка, dev-сервер, multi-page build |
-| **gh-pages** | Деплой на GitHub Pages с кастомным доменом |
+| Разметка · Markup | HTML5 |
+| Стили · Styles | SCSS, BEM |
+| Скрипты · Scripts | Vanilla JavaScript, ES modules |
+| Сборка · Build | Vite (multi-page build) |
+| Шрифты · Fonts | Cormorant Garamond, Inter, Cormorant SC (`woff2`) |
+| Хостинг · Hosting | GitHub Pages (`gh-pages`) + `ulles.ru` |
 
----
+## Структура проекта · Project Structure
 
-## Структура
-
-```
-SilvaPro/
-├── index.html            # Главная (лендинг)
-├── privacy/              # Политика конфиденциальности
-├── terms/                # Пользовательское соглашение
-├── 404.html              # Страница ошибки
-├── scripts/
-│   ├── main.js                  # Точка входа
-│   ├── preloader.js
-│   ├── burger-menu.js
-│   ├── nav-highlight.js
-│   ├── anchor-links.js
-│   ├── service-cards-reveal.js
-│   ├── experience-reveal.js
-│   └── cookies-banner.js
-├── styles/
-│   ├── style.scss               # Сборка стилей
+```text
+├── index.html            # Главная · Home (landing)
+├── privacy/              # Политика конфиденциальности · Privacy Policy
+├── terms/                # Пользовательское соглашение · Terms of Use
+├── 404.html
+├── scripts/              # JavaScript (ES-модули · ES modules)
+│   ├── main.js           # Точка входа · Entry point
+│   ├── preloader.js  burger-menu.js  nav-highlight.js  anchor-links.js
+│   └── service-cards-reveal.js  experience-reveal.js  cookies-banner.js
+├── styles/               # SCSS
+│   ├── style.scss        # Сборка стилей · Main stylesheet
 │   ├── _variables.scss  _mixins.scss  _base.scss  _fonts.scss  _helpers.scss
-│   └── blocks/                  # БЭМ-блоки: header, hero, services, experience, …
-├── fonts/  icons/  images/
+│   └── blocks/           # БЭМ-блоки · BEM blocks
+├── images/  icons/  fonts/
 ├── public/               # CNAME, robots.txt, sitemap.xml
 └── vite.config.js
 ```
 
----
-
-## Запуск локально
+## Запуск локально · Running Locally
 
 ```bash
 git clone https://github.com/KatyMist/SilvaPro.git
 cd SilvaPro
 npm install
-
-npm run dev       # dev-сервер
-npm run build     # сборка в dist/
-npm run preview   # просмотр сборки
-npm run deploy    # сборка + публикация на GitHub Pages
+npm run dev       # dev-сервер · dev server
+npm run build     # сборка в dist/ · build to dist/
+npm run preview   # просмотр сборки · preview the build
+npm run deploy    # сборка + публикация · build + deploy to GitHub Pages
 ```
 
----
+## Автор · Author
 
-## Автор
+**Екатерина Туманова · Ekaterina Tumanova** — Frontend Developer & Designer<br>
+Дизайн, вёрстка, анимации, SEO и деплой · Design, markup, animations, SEO and deployment
 
-<table>
-  <tr>
-    <td>
-      <b>Екатерина Туманова</b> — Frontend Developer & Designer<br/>
-      Дизайн, вёрстка, анимации, SEO и деплой<br/><br/>
-      <a href="https://katymist.github.io/Portfolio/">🌐 Портфолио</a> ·
-      <a href="https://github.com/KatyMist">🐙 GitHub</a>
-    </td>
-  </tr>
-</table>
+[Портфолио · Portfolio](https://katymist.github.io/Portfolio/) · [GitHub](https://github.com/KatyMist)
 
-<p align="right"><a href="#top">↑ Наверх</a></p>
-
----
-
-<a id="en"></a>
-
-# 🇬🇧 English
-
-## About
-
-**SilvaPro** is a single-page business card website for an independent specialist with over 15 years of experience in forest management who supports businesses across the Ulyanovsk Region. The site's goal is to present the services concisely and professionally, and to lead visitors to book a consultation.
-
-**Page sections:**
-
-| Section | What's inside |
-|---|---|
-| **Hero** | Expert support for forest users |
-| **Range of services** | Forest reporting, declarations, forest plot design documentation, consultations |
-| **Professional approach** | Experience, way of working, key advantages |
-| **Contacts** | Phone, email, MAX, Telegram, regional map |
-| **Legal pages** | Privacy policy, terms of use, 404 |
-
----
-
-## Features
-
-- 🎬 **Preloader** with the logo and an animated progress bar
-- 📱 **Responsive layout** — from mobile to wide screens, burger menu with scroll lock
-- 🧭 **Active menu item highlighting** on scroll (`IntersectionObserver`)
-- 🪄 **Reveal animations** — service cards with staggered delays, step-by-step reveal of the Experience section
-- 🔗 **Smooth anchor scrolling** without cluttering the address bar
-- 🍪 **Cookie consent banner** — Yandex.Metrica loads **only after** the visitor clicks "OK"
-- 🔍 **SEO**: meta tags, Open Graph, `schema.org` (`ProfessionalService`), `sitemap.xml`, `robots.txt`, canonical URL
-- 🖋 Typography: **Cormorant Garamond** + **Inter**, self-hosted Cormorant SC fonts
-
----
-
-## Tech stack
-
-| Technology | Purpose |
-|---|---|
-| **HTML5** | Semantic markup |
-| **SCSS** | Styles following the **BEM** methodology, split into blocks |
-| **Vanilla JS (ES modules)** | Interactivity without frameworks |
-| **Vite** | Bundling, dev server, multi-page build |
-| **gh-pages** | Deployment to GitHub Pages with a custom domain |
-
----
-
-## Project structure
-
-```
-SilvaPro/
-├── index.html            # Home page (landing)
-├── privacy/              # Privacy policy
-├── terms/                # Terms of use
-├── 404.html              # Error page
-├── scripts/
-│   ├── main.js                  # Entry point
-│   ├── preloader.js
-│   ├── burger-menu.js
-│   ├── nav-highlight.js
-│   ├── anchor-links.js
-│   ├── service-cards-reveal.js
-│   ├── experience-reveal.js
-│   └── cookies-banner.js
-├── styles/
-│   ├── style.scss               # Main stylesheet
-│   ├── _variables.scss  _mixins.scss  _base.scss  _fonts.scss  _helpers.scss
-│   └── blocks/                  # BEM blocks: header, hero, services, experience, …
-├── fonts/  icons/  images/
-├── public/               # CNAME, robots.txt, sitemap.xml
-└── vite.config.js
-```
-
----
-
-## Running locally
-
-```bash
-git clone https://github.com/KatyMist/SilvaPro.git
-cd SilvaPro
-npm install
-
-npm run dev       # dev server
-npm run build     # build to dist/
-npm run preview   # preview the build
-npm run deploy    # build + publish to GitHub Pages
-```
-
----
-
-## Author
-
-<table>
-  <tr>
-    <td>
-      <b>Ekaterina Tumanova</b> — Frontend Developer & Designer<br/>
-      Design, markup, animations, SEO and deployment<br/><br/>
-      <a href="https://katymist.github.io/Portfolio/">🌐 Portfolio</a> ·
-      <a href="https://github.com/KatyMist">🐙 GitHub</a>
-    </td>
-  </tr>
-</table>
-
-<p align="right"><a href="#top">↑ Back to top</a></p>
-
----
+<p align="right"><a href="#top">↑ Наверх · Back to top</a></p>
 
 <div align="center">
-<sub>🌲 Сделано с заботой о лесе и о клиенте · Made with care for the forest and the client<br/>2026 · AI-assisted development</sub>
+<sub>🌲 Сделано с заботой о лесе и о клиенте · Made with care for the forest and the client<br>2026 · AI-assisted development</sub>
 </div>
