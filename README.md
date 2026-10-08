@@ -4,8 +4,7 @@
 
 <img src="icons/1.svg" alt="SilvaPro logo" width="88">
 
-# SilvaPro — лесная документация
-# SilvaPro — Forestry Documentation
+# Лесная документация | Forestry Documentation
 
 **Сайт-визитка специалиста по лесопользованию · Ульяновская область**<br>
 **Business card website for a forest management specialist · Ulyanovsk Region, Russia**
