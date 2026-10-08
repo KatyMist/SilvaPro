@@ -126,7 +126,3 @@ npm run deploy    # сборка + публикация · build + deploy to Git
 [Портфолио · Portfolio](https://katymist.github.io/Portfolio/) · [GitHub](https://github.com/KatyMist)
 
 <p align="right"><a href="#top">↑ Наверх · Back to top</a></p>
-
-<div align="center">
-<sub>🌲 Сделано с заботой о лесе и о клиенте · Made with care for the forest and the client<br>2026 · AI-assisted development</sub>
-</div>
