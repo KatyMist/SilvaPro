@@ -39,6 +39,7 @@ A single-page business card website for an independent specialist with over 15 y
 | [Комплекс услуг · Services](https://ulles.ru/#services) | Лесная отчётность, декларации, проектная документация, консультации<br>Forest reporting, declarations, forest plot design documentation, consultations |
 | [Профессиональный подход · Approach](https://ulles.ru/#experience) | Опыт, формат работы, преимущества<br>Experience, way of working, key advantages |
 | [Контакты · Contacts](https://ulles.ru/#contacts) | Телефон, e-mail, MAX, Telegram, карта области<br>Phone, email, MAX, Telegram, regional map |
+| Страницы услуг · Service pages | [Проект освоения лесов](https://ulles.ru/proekt-osvoeniya-lesov/), [лесная декларация](https://ulles.ru/lesnaya-deklaratsiya/), [лесная отчётность](https://ulles.ru/lesnaya-otchetnost/) — с FAQ и хлебными крошками<br>Dedicated landing pages for each service with FAQ and breadcrumbs |
 | Юридические страницы · Legal pages | Политика конфиденциальности, пользовательское соглашение, 404<br>Privacy policy, terms of use, 404 |
 
 ## Скриншоты · Screenshots
@@ -46,7 +47,7 @@ A single-page business card website for an independent specialist with over 15 y
 <details open>
 <summary><b>Комплекс услуг · Services</b></summary>
 <br>
-<img width="1699" height="758" alt="Снимок экрана — 2026-10-10 в 19 16 57" src="https://github.com/user-attachments/assets/3440e4e9-5029-420c-b6fe-c82be486940d" />
+<img width="1699" height="758" alt="Services section" src="https://github.com/user-attachments/assets/3440e4e9-5029-420c-b6fe-c82be486940d" />
 </details>
 
 <details>
@@ -61,17 +62,28 @@ A single-page business card website for an independent specialist with over 15 y
 <img src="https://github.com/user-attachments/assets/3dbea773-d528-47c7-8aa5-8723776708ca" alt="Mobile version" width="100%">
 </details>
 
+<details>
+<summary><b>Тёмная тема · Dark Theme</b></summary>
+<br>
+<img width="1705" height="908" alt="Dark theme — home page" src="https://github.com/user-attachments/assets/39fcc346-8c62-4a88-835c-80cd003872cb" />
+<img width="1695" height="763" alt="Dark theme — services" src="https://github.com/user-attachments/assets/5eaa05fc-d2e2-41e4-97ee-728203483a6f" />
+<img width="2800" height="1520" alt="Dark theme on mobile" src="https://github.com/user-attachments/assets/1fd43288-a510-4609-a582-9fae09b5c9a7" />
+</details>
+
 ## Возможности · Features
 
 | Русский | English |
 |---|---|
 | **Прелоадер** с логотипом и анимированной полосой загрузки | **Preloader** with the logo and an animated progress bar |
+| **Тёмная тема**: переключатель в шапке, учёт системной настройки (`prefers-color-scheme`), выбор сохраняется в `localStorage`, без мигания при загрузке | **Dark theme**: header toggle, respects system preference (`prefers-color-scheme`), choice saved in `localStorage`, no flash on load |
 | **Адаптивная вёрстка**, бургер-меню с блокировкой скролла | **Responsive layout**, burger menu with scroll lock |
 | **Подсветка активного пункта меню** при прокрутке (`IntersectionObserver`) | **Active menu item highlighting** on scroll (`IntersectionObserver`) |
 | **Анимации появления**: карточки услуг со ступенчатой задержкой, поэтапный reveal блока «Опыт» | **Reveal animations**: staggered service cards, step-by-step reveal of the Experience block |
 | **Плавный скролл** по якорям без мусора в адресной строке | **Smooth anchor scrolling** without cluttering the address bar |
+| **Оптимизация изображений**: WebP, ленивая загрузка (`loading="lazy"`) | **Image optimization**: WebP, lazy loading (`loading="lazy"`) |
+| **Доступность**: `aria`-атрибуты у меню и переключателя темы, учёт `prefers-reduced-motion` | **Accessibility**: `aria` attributes on the menu and theme toggle, respects `prefers-reduced-motion` |
 | **Cookie-баннер**: Яндекс.Метрика подключается только после согласия | **Cookie banner**: Yandex.Metrica loads only after consent |
-| **SEO**: мета-теги, Open Graph, Schema.org (`ProfessionalService`), sitemap, robots.txt, canonical | **SEO**: meta tags, Open Graph, Schema.org (`ProfessionalService`), sitemap, robots.txt, canonical |
+| **SEO**: мета-теги, Open Graph, Schema.org (`ProfessionalService`, `Service`, `FAQPage`, `BreadcrumbList`), отдельные страницы под поисковые запросы, sitemap, robots.txt, canonical | **SEO**: meta tags, Open Graph, Schema.org (`ProfessionalService`, `Service`, `FAQPage`, `BreadcrumbList`), dedicated landing pages for search queries, sitemap, robots.txt, canonical |
 | **Политика конфиденциальности** и пользовательское соглашение | **Privacy policy** and terms of use |
 | **Собственный домен** через GitHub Pages | **Custom domain** via GitHub Pages |
 
@@ -83,26 +95,30 @@ A single-page business card website for an independent specialist with over 15 y
 | Стили · Styles | SCSS, BEM |
 | Скрипты · Scripts | Vanilla JavaScript, ES modules |
 | Сборка · Build | Vite (multi-page build) |
-| Шрифты · Fonts | Cormorant Garamond, Inter, Cormorant SC (`woff2`) |
+| Шрифты · Fonts | Cormorant SC (`woff2`) |
+| Изображения · Images | WebP, SVG |
 | Хостинг · Hosting | GitHub Pages (`gh-pages`) + `ulles.ru` |
 
 ## Структура проекта · Project Structure
 
 ```text
-├── index.html            # Главная · Home (landing)
-├── privacy/              # Политика конфиденциальности · Privacy Policy
-├── terms/                # Пользовательское соглашение · Terms of Use
+├── index.html                # Главная · Home (landing)
+├── proekt-osvoeniya-lesov/   # Страница услуги · Service page
+├── lesnaya-deklaratsiya/     # Страница услуги · Service page
+├── lesnaya-otchetnost/       # Страница услуги · Service page
+├── privacy/                  # Политика конфиденциальности · Privacy Policy
+├── terms/                    # Пользовательское соглашение · Terms of Use
 ├── 404.html
-├── scripts/              # JavaScript (ES-модули · ES modules)
-│   ├── main.js           # Точка входа · Entry point
-│   ├── preloader.js  burger-menu.js  nav-highlight.js  anchor-links.js
+├── scripts/                  # JavaScript (ES-модули · ES modules)
+│   ├── main.js               # Точка входа · Entry point
+│   ├── preloader.js  burger-menu.js  nav-highlight.js  anchor-links.js  theme-toggle.js
 │   └── service-cards-reveal.js  experience-reveal.js  cookies-banner.js
-├── styles/               # SCSS
-│   ├── style.scss        # Сборка стилей · Main stylesheet
+├── styles/                   # SCSS
+│   ├── style.scss            # Сборка стилей · Main stylesheet
 │   ├── _variables.scss  _mixins.scss  _base.scss  _fonts.scss  _helpers.scss
-│   └── blocks/           # БЭМ-блоки · BEM blocks
+│   └── blocks/               # БЭМ-блоки · BEM blocks
 ├── images/  icons/  fonts/
-├── public/               # CNAME, robots.txt, sitemap.xml
+├── public/                   # CNAME, robots.txt, sitemap.xml
 └── vite.config.js
 ```
 
