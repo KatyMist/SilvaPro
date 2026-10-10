@@ -29,9 +29,9 @@
 
 ## О сайте · About
 
-Одностраничный сайт-визитка для частного специалиста, который более 15 лет занимается лесопользованием и сопровождает бизнес в Ульяновской области. Задача — коротко и солидно рассказать об услугах и привести клиента к консультации.
+Сайт-визитка для частного специалиста, который более 15 лет занимается лесопользованием и сопровождает бизнес в Ульяновской области. Задача — коротко и солидно рассказать об услугах и привести клиента к консультации. Помимо лендинга, у каждой ключевой услуги есть своя страница под поисковые запросы.
 
-A single-page business card website for an independent specialist with over 15 years of experience in forest management who supports businesses across the Ulyanovsk Region. Its goal is to present the services concisely and professionally and lead visitors to book a consultation. The website itself is in Russian.
+A business card website for an independent specialist with over 15 years of experience in forest management who supports businesses across the Ulyanovsk Region. Its goal is to present the services concisely and professionally and lead visitors to book a consultation. Besides the landing page, each key service has its own page targeting search queries. The website itself is in Russian.
 
 | Раздел · Section | Что внутри · Content |
 |---|---|
@@ -65,9 +65,9 @@ A single-page business card website for an independent specialist with over 15 y
 <details>
 <summary><b>Тёмная тема · Dark Theme</b></summary>
 <br>
+<img width="2800" height="1520" alt="Dark theme on mobile" src="https://github.com/user-attachments/assets/1fd43288-a510-4609-a582-9fae09b5c9a7" />
 <img width="1705" height="908" alt="Dark theme — home page" src="https://github.com/user-attachments/assets/39fcc346-8c62-4a88-835c-80cd003872cb" />
 <img width="1695" height="763" alt="Dark theme — services" src="https://github.com/user-attachments/assets/5eaa05fc-d2e2-41e4-97ee-728203483a6f" />
-<img width="2800" height="1520" alt="Dark theme on mobile" src="https://github.com/user-attachments/assets/1fd43288-a510-4609-a582-9fae09b5c9a7" />
 </details>
 
 ## Возможности · Features
