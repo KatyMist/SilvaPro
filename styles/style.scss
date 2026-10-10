@@ -20,3 +20,8 @@
 @use 'blocks/cookies-banner';
 @use 'blocks/not-found';
 @use 'blocks/preloader';
+@use 'blocks/theme-toggle';
+@use 'blocks/service-page';
+
+// Тёмная тема — последней, поверх всех блоков
+@use 'theme-dark';

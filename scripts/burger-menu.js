@@ -13,6 +13,7 @@ export function initBurgerMenu() {
     burger.classList.remove('is-active');
     nav.classList.remove('is-open');
     burger.setAttribute('aria-expanded', 'false');
+    burger.setAttribute('aria-label', 'Открыть меню');
     document.body.style.overflow = '';
   };
 
@@ -20,6 +21,7 @@ export function initBurgerMenu() {
     burger.classList.add('is-active');
     nav.classList.add('is-open');
     burger.setAttribute('aria-expanded', 'true');
+    burger.setAttribute('aria-label', 'Закрыть меню');
     document.body.style.overflow = 'hidden';
   };
 
@@ -30,6 +32,10 @@ export function initBurgerMenu() {
 
   links.forEach((link) => {
     link.addEventListener('click', closeMenu);
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && nav.classList.contains('is-open')) closeMenu();
   });
 
   // Закрыть меню, если экран расширили обратно до десктопа

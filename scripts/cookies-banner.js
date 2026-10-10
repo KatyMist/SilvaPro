@@ -8,7 +8,12 @@ export function initCookiesBanner() {
 
   if (!banner || !acceptBtn || !closeBtn) return;
 
-  const alreadyAccepted = localStorage.getItem(STORAGE_KEY) === 'true';
+  let alreadyAccepted = false;
+  try {
+    alreadyAccepted = localStorage.getItem(STORAGE_KEY) === 'true';
+  } catch {
+    // хранилище недоступно — просто показываем баннер
+  }
 
   if (alreadyAccepted) {
     window.initYandexMetrika?.();
@@ -21,7 +26,11 @@ export function initCookiesBanner() {
 
   const dismissWithConsent = () => {
     banner.classList.remove('is-visible');
-    localStorage.setItem(STORAGE_KEY, 'true');
+    try {
+      localStorage.setItem(STORAGE_KEY, 'true');
+    } catch {
+      // не удалось запомнить согласие — метрику всё равно включаем
+    }
     window.initYandexMetrika?.();
   };
 

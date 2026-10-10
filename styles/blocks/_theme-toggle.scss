@@ -1,0 +1,79 @@
+// ==========================================================================
+// ПЕРЕКЛЮЧАТЕЛЬ ТЕМЫ в шапке (луна — включить тёмную, солнце — светлую)
+// Цвета тёмной темы для кнопки — в _theme-dark.scss
+// Обычный CSS-синтаксис — в style.css попадает 1-в-1
+// ==========================================================================
+
+.header__actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.theme-toggle {
+  position: relative;
+  z-index: 101; // над открытой мобильной панелью меню, как и бургер
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  border: 1px solid #DFD9CC;
+  border-radius: 50%;
+  color: #3F4A32;
+  cursor: pointer;
+  transition: color 0.25s ease, border-color 0.25s ease, background-color 0.25s ease, transform 0.25s ease;
+}
+
+.theme-toggle:hover {
+  border-color: #3F4A32;
+  background-color: rgba(63, 74, 50, 0.06);
+  transform: translateY(-2px);
+}
+
+.theme-toggle:focus-visible {
+  outline: 2px solid #7C8A5A;
+  outline-offset: 3px;
+}
+
+.theme-toggle__icon {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  transition: opacity 0.35s ease, transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.theme-toggle__icon--sun {
+  opacity: 0;
+  transform: rotate(90deg) scale(0.5);
+}
+
+// Кнопка занимает место в шапке — на десктопе чуть плотнее меню,
+// чтобы пункты не переносились на две строки
+@media (min-width: 1200px) {
+  .nav__list {
+    gap: 22px;
+  }
+
+  .nav__link {
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 767px) {
+  .header__actions {
+    gap: 8px;
+  }
+
+  .theme-toggle {
+    width: 38px;
+    height: 38px;
+  }
+
+  .theme-toggle__icon {
+    width: 18px;
+    height: 18px;
+  }
+}

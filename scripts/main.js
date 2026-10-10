@@ -7,6 +7,7 @@ import { initCookiesBanner } from './cookies-banner.js';
 import { initBurgerMenu } from './burger-menu.js';
 import { initPreloader } from './preloader.js';
 import { initAnchorLinks } from './anchor-links.js';
+import { initThemeToggle } from './theme-toggle.js';
 
 initNavHighlight();
 initServiceCardsReveal();
@@ -15,3 +16,4 @@ initCookiesBanner();
 initBurgerMenu();
 initPreloader();
 initAnchorLinks();
+initThemeToggle();

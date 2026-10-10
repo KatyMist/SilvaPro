@@ -1,0 +1,423 @@
+// ==========================================================================
+// ТЁМНАЯ ТЕМА
+// Включается атрибутом data-theme="dark" на <html>. Атрибут ставит
+// инлайн-скрипт в <head> (по сохранённому выбору или настройке системы),
+// а переключает кнопка .theme-toggle в шапке (scripts/theme-toggle.js).
+//
+// Файл написан обычным CSS-синтаксисом — в style.css он попадает 1-в-1.
+// Блоки, которые и так тёмные (cta-footer, contacts), не трогаем.
+// ==========================================================================
+
+[data-theme="dark"] {
+  color-scheme: dark; // тёмные скроллбары и системные элементы
+
+  --dk-bg: #141611;            // фон страницы
+  --dk-bg-card: #1D2018;       // фон карточек
+  --dk-heading: #EDE9DF;       // заголовки
+  --dk-text: #D6D2C6;          // основной текст
+  --dk-text-secondary: #A5A497;// второстепенный текст
+  --dk-border: #33372B;        // линии и бордеры
+  --dk-primary: #56663F;       // кнопки
+  --dk-primary-hover: #63754A;
+  --dk-link: #B5C48E;          // ссылки и активные пункты меню
+  --dk-accent: #9BAD72;        // буллеты, иконки
+  --dk-title-gradient: linear-gradient(120deg, #C9D6A6 0%, #E3DFC4 25%, #E2B57A 60%, #C98B52 85%, #A9673A 100%);
+}
+
+// ---------------------------------------------------------------
+// База
+// ---------------------------------------------------------------
+[data-theme="dark"] body {
+  color: var(--dk-text);
+  background-color: var(--dk-bg);
+}
+
+[data-theme="dark"] h1,
+[data-theme="dark"] h2,
+[data-theme="dark"] h3 {
+  color: var(--dk-heading);
+}
+
+[data-theme="dark"] .section-title__text {
+  color: var(--dk-link);
+}
+
+[data-theme="dark"] .section-title__icon,
+[data-theme="dark"] .section-title::after {
+  color: var(--dk-accent);
+}
+
+[data-theme="dark"] .section-title::after {
+  background-color: var(--dk-accent);
+}
+
+[data-theme="dark"] .section-title__row::before,
+[data-theme="dark"] .section-title__row::after {
+  background-color: var(--dk-border);
+}
+
+// Кнопки
+[data-theme="dark"] .btn--primary {
+  background-color: var(--dk-primary);
+}
+
+[data-theme="dark"] .btn--primary:hover {
+  background-color: var(--dk-primary-hover);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.45);
+}
+
+[data-theme="dark"] .btn--link {
+  color: var(--dk-heading);
+}
+
+[data-theme="dark"] .btn--link:hover {
+  color: var(--dk-link);
+}
+
+// ---------------------------------------------------------------
+// Шапка и меню
+// ---------------------------------------------------------------
+[data-theme="dark"] .header {
+  background-color: var(--dk-bg);
+}
+
+[data-theme="dark"] .header::before {
+  background-color: rgba(20, 22, 17, 0.9);
+  border-bottom-color: var(--dk-border);
+}
+
+// Логотип — тёмно-зелёная ёлка, на тёмном фоне осветляем
+[data-theme="dark"] .logo__icon,
+[data-theme="dark"] .preloader__logo {
+  filter: brightness(1.9) saturate(0.8);
+}
+
+[data-theme="dark"] .logo__title {
+  color: var(--dk-heading);
+}
+
+[data-theme="dark"] .logo__subtitle {
+  color: var(--dk-text-secondary);
+}
+
+[data-theme="dark"] .nav__link {
+  color: var(--dk-text);
+}
+
+[data-theme="dark"] .nav__link::after {
+  background-color: var(--dk-link);
+}
+
+[data-theme="dark"] .nav__link:hover,
+[data-theme="dark"] .nav__link.is-active {
+  color: var(--dk-link);
+}
+
+[data-theme="dark"] .nav__link.is-active {
+  text-shadow: 0 0 12px rgba(181, 196, 142, 0.35);
+}
+
+[data-theme="dark"] .burger__line {
+  background-color: var(--dk-heading);
+}
+
+@media (max-width: 1199px) {
+  [data-theme="dark"] .nav {
+    background-color: var(--dk-bg);
+  }
+
+  [data-theme="dark"] .nav__link:hover {
+    background-color: rgba(181, 196, 142, 0.1);
+  }
+
+  [data-theme="dark"] .nav__cta:hover {
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
+  }
+}
+
+// ---------------------------------------------------------------
+// Hero, прелоадер, 404 — градиентный текст в светлых тонах
+// ---------------------------------------------------------------
+[data-theme="dark"] .hero__title,
+[data-theme="dark"] .preloader__title,
+[data-theme="dark"] .not-found__code {
+  background: var(--dk-title-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+[data-theme="dark"] .hero__title {
+  filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.5));
+}
+
+// Картинка в hero вырезана на светлом фоне — на тёмном её край выглядел
+// резко и со светлой каймой. Маска (images/1.1-mask.png) — альфа картинки
+// с растушёванными краями пейзажа; ветка остаётся чёткой
+[data-theme="dark"] .hero__image {
+  -webkit-mask-image: url("/images/1.1-mask.png");
+  mask-image: url("/images/1.1-mask.png");
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-position: right center;
+  mask-position: right center;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+
+[data-theme="dark"] .preloader {
+  background-color: var(--dk-bg);
+}
+
+[data-theme="dark"] .preloader__subtitle {
+  color: var(--dk-text-secondary);
+}
+
+[data-theme="dark"] .preloader__bar-wrap {
+  background-color: var(--dk-border);
+}
+
+[data-theme="dark"] .preloader__bar {
+  background-color: var(--dk-accent);
+}
+
+// ---------------------------------------------------------------
+// Карточки услуг
+// ---------------------------------------------------------------
+[data-theme="dark"] .service-card {
+  background-color: var(--dk-bg-card);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme="dark"] .service-card::after {
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+}
+
+[data-theme="dark"] .service-card:hover {
+  background-color: #3F4A32;
+}
+
+[data-theme="dark"] .service-card__icon {
+  background-color: var(--dk-heading);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="dark"] .service-card__list li {
+  color: var(--dk-text-secondary);
+}
+
+[data-theme="dark"] .service-card__list li::before {
+  background-color: var(--dk-accent);
+}
+
+[data-theme="dark"] .service-card:hover .service-card__list li {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+[data-theme="dark"] .service-card:hover .service-card__list li::before {
+  background-color: #FFFFFF;
+}
+
+// ---------------------------------------------------------------
+// Опыт и преимущества
+// ---------------------------------------------------------------
+[data-theme="dark"] .experience__text p,
+[data-theme="dark"] .experience__signature-caption {
+  color: var(--dk-text-secondary);
+}
+
+[data-theme="dark"] .experience__text strong {
+  color: var(--dk-heading);
+}
+
+[data-theme="dark"] .experience__signature {
+  border-top-color: var(--dk-border);
+}
+
+// Картинка «приподнята»: глубокая тень вниз, тонкий светлый кант,
+// тёплое свечение вокруг и лёгкий подсвет краёв изнутри (сама картинка
+// темнее к краям — без этого она выглядит вдавленной)
+[data-theme="dark"] .experience__media {
+  box-shadow:
+    0 0 0 1px rgba(237, 233, 223, 0.1),
+    0 12px 24px -8px rgba(0, 0, 0, 0.6),
+    0 28px 60px -12px rgba(0, 0, 0, 0.85),
+    0 0 90px -10px rgba(226, 181, 122, 0.22);
+}
+
+[data-theme="dark"] .experience__media::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: inherit;
+  background: radial-gradient(ellipse at center, transparent 55%, rgba(255, 226, 180, 0.1) 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18);
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
+[data-theme="dark"] .experience__media:hover {
+  box-shadow:
+    0 0 0 1px rgba(237, 233, 223, 0.14),
+    0 16px 30px -8px rgba(0, 0, 0, 0.65),
+    0 40px 80px -16px rgba(0, 0, 0, 0.9),
+    0 0 120px -10px rgba(226, 181, 122, 0.32);
+}
+
+[data-theme="dark"] .advantages {
+  background-color: var(--dk-bg-card);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme="dark"] .advantages__item:not(:last-child) {
+  border-bottom-color: var(--dk-border);
+}
+
+[data-theme="dark"] .advantages__icon {
+  color: var(--dk-accent);
+}
+
+[data-theme="dark"] .advantages__value {
+  color: var(--dk-heading);
+}
+
+[data-theme="dark"] .advantages__label {
+  color: var(--dk-text-secondary);
+}
+
+// ---------------------------------------------------------------
+// Футер
+// ---------------------------------------------------------------
+[data-theme="dark"] .footer {
+  border-top-color: var(--dk-border);
+}
+
+[data-theme="dark"] .footer__copyright,
+[data-theme="dark"] .footer__legal,
+[data-theme="dark"] .footer__link {
+  color: var(--dk-text-secondary);
+}
+
+[data-theme="dark"] .footer__divider {
+  color: var(--dk-border);
+}
+
+[data-theme="dark"] .footer__link:hover {
+  color: var(--dk-link);
+}
+
+[data-theme="dark"] .footer__dev-link {
+  background-color: var(--dk-primary);
+  border-color: var(--dk-primary);
+}
+
+[data-theme="dark"] .footer__dev-link:hover {
+  background-color: var(--dk-primary-hover);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+}
+
+// ---------------------------------------------------------------
+// Политика / соглашение
+// ---------------------------------------------------------------
+[data-theme="dark"] .legal__back,
+[data-theme="dark"] .legal__updated,
+[data-theme="dark"] .legal__content p,
+[data-theme="dark"] .legal__content li {
+  color: var(--dk-text-secondary);
+}
+
+[data-theme="dark"] .legal__content h2,
+[data-theme="dark"] .legal__content strong {
+  color: var(--dk-heading);
+}
+
+[data-theme="dark"] .legal__content li::before {
+  background-color: var(--dk-accent);
+}
+
+[data-theme="dark"] .legal__back:hover,
+[data-theme="dark"] .legal__content a {
+  color: var(--dk-link);
+}
+
+[data-theme="dark"] .legal__content a:hover {
+  color: var(--dk-heading);
+}
+
+// ---------------------------------------------------------------
+// Cookie-баннер
+// ---------------------------------------------------------------
+[data-theme="dark"] .cookies-banner__inner {
+  background-color: var(--dk-bg-card);
+  border-color: var(--dk-border);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+[data-theme="dark"] .cookies-banner__text,
+[data-theme="dark"] .cookies-banner__close {
+  color: var(--dk-text-secondary);
+}
+
+[data-theme="dark"] .cookies-banner__link {
+  color: var(--dk-link);
+}
+
+[data-theme="dark"] .cookies-banner__link:hover {
+  color: var(--dk-heading);
+}
+
+[data-theme="dark"] .cookies-banner__btn {
+  background-color: var(--dk-primary);
+}
+
+[data-theme="dark"] .cookies-banner__btn:hover {
+  background-color: var(--dk-primary-hover);
+}
+
+[data-theme="dark"] .cookies-banner__close:hover {
+  color: var(--dk-heading);
+  background-color: var(--dk-border);
+}
+
+// ---------------------------------------------------------------
+// 404
+// ---------------------------------------------------------------
+[data-theme="dark"] .not-found__subtitle {
+  color: var(--dk-heading);
+}
+
+[data-theme="dark"] .not-found__divider-line {
+  background-color: var(--dk-border);
+}
+
+[data-theme="dark"] .not-found__divider-icon {
+  color: var(--dk-accent);
+}
+
+[data-theme="dark"] .not-found__text {
+  color: var(--dk-text-secondary);
+}
+
+// ---------------------------------------------------------------
+// Переключатель темы
+// ---------------------------------------------------------------
+[data-theme="dark"] .theme-toggle {
+  color: var(--dk-heading);
+  border-color: var(--dk-border);
+}
+
+[data-theme="dark"] .theme-toggle:hover {
+  color: var(--dk-link);
+  border-color: var(--dk-link);
+  background-color: rgba(181, 196, 142, 0.08);
+}
+
+[data-theme="dark"] .theme-toggle__icon--moon {
+  opacity: 0;
+  transform: rotate(-90deg) scale(0.5);
+}
+
+[data-theme="dark"] .theme-toggle__icon--sun {
+  opacity: 1;
+  transform: rotate(0) scale(1);
+}

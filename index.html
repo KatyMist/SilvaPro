@@ -16,13 +16,23 @@
   <meta property="og:image" content="https://ulles.ru/images/Important.png">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://ulles.ru/">
+  <!-- Тема: ставим до отрисовки, чтобы не мигала светлая -->
+  <script>
+    (function () {
+      var theme = 'light';
+      try {
+        var saved = localStorage.getItem('theme');
+        if (saved === 'light' || saved === 'dark') theme = saved;
+        else if (window.matchMedia('(prefers-color-scheme: dark)').matches) theme = 'dark';
+      } catch (e) {}
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+
 
   <link rel="stylesheet" href="/styles/style.css">
   <link rel="icon" href="/1.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" sizes="120x120" href="/icons/apple-touch-icon-120.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Yandex.Metrika counter -->
   <script type="text/javascript">
@@ -37,7 +47,6 @@
       ym(111519745, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
     };
   </script>
-  <noscript><img src="https://mc.yandex.ru/watch/111519745" style="position:absolute; left:-9999px;" alt="" /></noscript>
   <!-- /Yandex.Metrika counter -->
   
   <script type="application/ld+json">
@@ -48,7 +57,32 @@
     "url": "https://ulles.ru/",
     "image": "https://ulles.ru/images/Important.png",
     "description": "Разработка проектов освоения лесов и лесная отчётность в Ульяновской области.",
-    "areaServed": "Ульяновская область",
+    "areaServed": {
+      "@type": "AdministrativeArea",
+      "name": "Ульяновская область"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressRegion": "Ульяновская область",
+      "addressCountry": "RU"
+    },
+    "knowsAbout": [
+      "Проект освоения лесов",
+      "Лесная декларация",
+      "Проектная документация лесных участков",
+      "Лесная отчётность 1-ИЛ, 1-ОЛ, 1-ЗЛ, 1-ВЛ"
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Услуги для лесопользователей",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Консультации лесопользователей" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Проектная документация лесных участков" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Разработка проектов освоения лесов" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Оформление лесных деклараций" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Подготовка лесной отчётности" } }
+      ]
+    },
     "founder": {
       "@type": "Person",
       "name": "Туманов Владимир Алексеевич"
@@ -61,6 +95,7 @@
 </head>
 
 <body>
+  <noscript><img src="https://mc.yandex.ru/watch/111519745" style="position:absolute; left:-9999px;" alt="" /></noscript>
   <!-- PRELOADER -->
   <div class="preloader" id="preloader">
     <div class="preloader__inner">
@@ -94,13 +129,25 @@
         <a href="#contacts" class="nav__cta btn btn--primary">Получить консультацию</a>
       </nav>
 
-      <button type="button" class="header__burger burger" id="burgerBtn" aria-label="Открыть меню" aria-expanded="false">
-        <span class="burger__line"></span>
-        <span class="burger__line"></span>
-        <span class="burger__line"></span>
-      </button>
+      <div class="header__actions">
+        <button type="button" class="theme-toggle" id="themeToggle" aria-label="Включить тёмную тему" aria-pressed="false">
+          <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11Z" />
+          </svg>
+          <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4.2" />
+            <path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6" />
+          </svg>
+        </button>
 
-      <a href="https://max.ru/u/f9LHodD0cOIO86hXoOKrQ0ISoDoyjUJIfLt1t3_SzGHrJIwSJzWI2oRuxEo" target="_blank" rel="noopener" class="header__cta btn btn--primary">Получить консультацию</a>
+        <button type="button" class="header__burger burger" id="burgerBtn" aria-label="Открыть меню" aria-expanded="false">
+          <span class="burger__line"></span>
+          <span class="burger__line"></span>
+          <span class="burger__line"></span>
+        </button>
+
+        <a href="https://max.ru/u/f9LHodD0cOIO86hXoOKrQ0ISoDoyjUJIfLt1t3_SzGHrJIwSJzWI2oRuxEo" target="_blank" rel="noopener" class="header__cta btn btn--primary">Получить консультацию</a>
+      </div>
     </div>
   </header>
 
@@ -116,7 +163,7 @@
         </div>
 
         <div class="hero__media">
-          <img src="/images/1.1.png" alt="Лес и рабочие документы" class="hero__image" />
+          <img src="/images/1.1.webp" alt="Лес и рабочие документы" class="hero__image" width="1536" height="1024" fetchpriority="high" />
         </div>
       </div>
     </section>
@@ -133,24 +180,49 @@
         <ul class="services__list">
           <li class="service-card">
             <div class="service-card__image">
-              <img src="/images/2.1.png" alt="Отчётность" />
+              <img src="/images/6.1.webp" alt="Консультации" width="800" height="534" loading="lazy" decoding="async" />
             </div>
-            <img src="/icons/5.svg" alt="" class="service-card__icon" />
-            <h3 class="service-card__title">Подготовка лесной отчётности</h3>
+            <img src="/icons/6.svg" alt="" class="service-card__icon" />
+            <h3 class="service-card__title">Консультации лесопользователей</h3>
             <ul class="service-card__list">
-              <li>Отчёт об использовании лесов (1-ИЛ)</li>
-              <li>Отчёт об охране лесов (1-ОЛ)</li>
-              <li>Отчёт о защите лесов (1-ЗЛ)</li>
-              <li>Отчёт о воспроизводстве лесов (1-ВЛ)</li>
+              <li>Приобретение лесных участков в&nbsp;аренду</li>
+              <li>Проведение санитарных рубок</li>
+              <li>Подготовка к&nbsp;проверкам</li>
+              <li>Иные вопросы по&nbsp;лесному законодательству</li>
             </ul>
           </li>
 
           <li class="service-card">
             <div class="service-card__image">
-              <img src="/images/3.1.png" alt="Лесные декларации" />
+              <img src="/images/5.1.webp" alt="Проектная документация лесных участков" width="800" height="534" loading="lazy" decoding="async" />
+            </div>
+            <img src="/icons/3.svg" alt="" class="service-card__icon" />
+            <h3 class="service-card__title">Проектная документация лесных участков</h3>
+            <ul class="service-card__list">
+              <li>Подготовка проектной документации лесных участков</li>
+              <li>Сопровождение ПДЛУ в&nbsp;процессе утверждения</li>
+            </ul>
+          </li>
+
+          <li class="service-card">
+            <div class="service-card__image">
+              <img src="/images/4.1.webp" alt="Проекты освоения лесных участков" width="800" height="533" loading="lazy" decoding="async" />
+            </div>
+            <img src="/icons/5.svg" alt="" class="service-card__icon" />
+            <h3 class="service-card__title"><a href="/proekt-osvoeniya-lesov/" class="service-card__link">Проекты освоения лесных участков</a></h3>
+            <ul class="service-card__list">
+              <li>Разработка проекта освоения лесов</li>
+              <li>Разработка дополнений к&nbsp;проектам освоения лесов</li>
+              <li>Сопровождение в&nbsp;прохождении государственной экспертизы</li>
+            </ul>
+          </li>
+
+          <li class="service-card">
+            <div class="service-card__image">
+              <img src="/images/3.1.webp" alt="Лесные декларации" width="800" height="533" loading="lazy" decoding="async" />
             </div>
             <img src="/icons/4.svg" alt="" class="service-card__icon" />
-            <h3 class="service-card__title">Оформление <br>деклараций</h3>
+            <h3 class="service-card__title"><a href="/lesnaya-deklaratsiya/" class="service-card__link">Оформление <br>деклараций</a></h3>
             <ul class="service-card__list">
               <li>Подготовка деклараций</li>
               <li>Сверка данных</li>
@@ -160,41 +232,15 @@
 
           <li class="service-card">
             <div class="service-card__image">
-              <img src="/images/4.1.png" alt="Отчётность" />
+              <img src="/images/2.1.webp" alt="Отчётность" width="800" height="533" loading="lazy" decoding="async" />
             </div>
             <img src="/icons/5.svg" alt="" class="service-card__icon" />
-            <h3 class="service-card__title">Подготовка лесной отчётности</h3>
+            <h3 class="service-card__title"><a href="/lesnaya-otchetnost/" class="service-card__link">Подготовка лесной отчётности</a></h3>
             <ul class="service-card__list">
-              <li>Отчёт об использовании лесов</li>
-              <li>Отчёт об охране лесов</li>
-              <li>Отчёт о защите лесов</li>
-              <li>Отчёт о воспроизводстве лесов</li>
-            </ul>
-          </li>
-
-          <li class="service-card">
-            <div class="service-card__image">
-              <img src="/images/5.1.png" alt="Проектная документация лесных участков" />
-            </div>
-            <img src="/icons/3.svg" alt="" class="service-card__icon" />
-            <h3 class="service-card__title">Проектная документация лесных участков</h3>
-            <ul class="service-card__list">
-              <li>Подготовка проектной документации лесных участков</li>
-              <li>Сопровождение ПДЛУ в процессе утверждения</li>
-            </ul>
-          </li>
-
-          <li class="service-card">
-            <div class="service-card__image">
-              <img src="/images/6.1.png" alt="Консультации" />
-            </div>
-            <img src="/icons/6.svg" alt="" class="service-card__icon" />
-            <h3 class="service-card__title">Консультации лесопользователей</h3>
-            <ul class="service-card__list">
-              <li>Приобретение лесных участков в аренду</li>
-              <li>Проведение санитарных рубок</li>
-              <li>Подготовка к проверкам</li>
-              <li>Иные вопросы по лесному законодательству</li>
+              <li>Отчёт об&nbsp;использовании лесов&nbsp;(1-ИЛ)</li>
+              <li>Отчёт об&nbsp;охране лесов&nbsp;(1-ОЛ)</li>
+              <li>Отчёт о&nbsp;защите лесов&nbsp;(1-ЗЛ)</li>
+              <li>Отчёт о&nbsp;воспроизводстве лесов&nbsp;(1-ВЛ)</li>
             </ul>
           </li>
         </ul>
@@ -206,11 +252,11 @@
       <div class="experience-block__inner">
 
         <div class="experience-block__decor">
-          <img src="/images/8.png" alt="" />
+          <img src="/images/8.webp" alt="" width="1024" height="1536" loading="lazy" decoding="async" />
         </div>
 
 
-        <div class="experience" id="experience">
+        <div class="experience">
           <h2 class="section-title">
             <span class="section-title__row">
               <span class="section-title__text">ПРОФЕССИОНАЛЬНЫЙ ПОДХОД К КАЖДОЙ ЗАДАЧЕ</span>
@@ -218,12 +264,12 @@
           </h2>
 
           <div class="experience__media">
-            <img src="./images/7.1.png" alt="Рабочее место специалиста" class="experience__image" />
+            <img src="/images/7.1.webp" alt="Рабочее место специалиста" class="experience__image" width="1400" height="934" loading="lazy" decoding="async" />
           </div>
 
           <div class="experience__text">
-            <p>Более 15 лет работаю в сфере лесопользования и хорошо понимаю все особенности подготовки лесной документации. <br>Знаю требования контролирующих органов и помогаю оформлять документы в соответствии с действующими нормами и правилами.<br></p>
-            <p>Работаю как <strong>самозанятый специалист</strong>, поэтому каждый проект веду лично <br>— от консультации до подготовки полного комплекта документации.</br> </p>
+            <p>Более 15 лет работаю в сфере лесопользования и хорошо понимаю все особенности подготовки лесной документации. <br>Знаю требования контролирующих органов и помогаю оформлять документы в соответствии с действующими нормами и правилами.</p>
+            <p>Работаю как <strong>самозанятый специалист</strong>, поэтому каждый проект веду лично <br>— от консультации до подготовки полного комплекта документации.</p>
              <p>Вы получаете прямое взаимодействие, внимательный подход и ответственное сопровождение на каждом этапе работы.</p>
           </div>
         </div>
@@ -234,7 +280,7 @@
     <!-- CTA + CONTACTS -->
     <section class="cta-footer" id="contacts">
       <div class="cta-footer__bg">
-        <img src="/images/9.png" alt="" />
+        <img src="/images/9.webp" alt="" width="1536" height="1024" loading="lazy" decoding="async" />
       </div>
  
       <div class="container cta-footer__inner">
@@ -261,7 +307,7 @@
             </li>
             <li class="contacts__item">
               <img src="/icons/7.svg" alt="" class="contacts__icon" />
-              <a href="tel:+79176151595">+7 (917) 615-15-95 <br>Владимир Алексеевич Туманов</br></a>
+              <a href="tel:+79176151595">+7 (917) 615-15-95<br>Владимир Алексеевич Туманов</a>
             </li>
             <li class="contacts__item">
               <img src="/icons/8.svg" alt="" class="contacts__icon" />
@@ -280,7 +326,7 @@
           </ul>
  
           <div class="contacts__map">
-            <img src="/images/10.png" alt="Карта Ульяновской области" class="contacts__map-img" />
+            <img src="/images/10.webp" alt="Карта Ульяновской области" class="contacts__map-img" width="720" height="720" loading="lazy" decoding="async" />
           </div>
 
           <p class="cta-footer__note">РАБОТАЮ ПО ВСЕЙ УЛЬЯНОВСКОЙ ОБЛАСТИ</p>

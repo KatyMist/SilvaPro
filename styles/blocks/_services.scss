@@ -50,7 +50,8 @@
   border-radius: $radius-md;
   overflow: hidden;
   box-shadow: $shadow-card;
-  padding-bottom: 24px;
+  padding-bottom: 22px;
+  container-type: inline-size; // для cqw — иконка считается от ширины карточки
   opacity: 0;
   translate: 0 32px;
   transition: transform 0.3s ease, background-color 0.3s ease,
@@ -126,11 +127,13 @@
   }
 }
 
-// Позиция иконки — зафиксирована, не менять
+// Позиция иконки — на нижнем крае картинки (картинка 4:3 → её высота = 75cqw).
+// Привязана к картинке, а не к низу карточки, поэтому не съезжает,
+// если высота карточки меняется из-за текста
 .service-card__icon {
   position: absolute;
   left: 24px;
-  bottom: 230px;
+  top: calc(75cqw - 9px);
   width: 50px;
   height: 50px;
   display: flex;
@@ -153,36 +156,37 @@
 .service-card__title {
   display: flex;
   align-items: center;
-  justify-content: center;
-  height: 60px;
+  justify-content: flex-start;
+  height: 50px;
   margin-top: 40px;
   padding-inline: 24px;
   font-size: 19px;
   line-height: 1.25;
+  text-wrap: balance; // строки заголовка примерно одинаковой длины
 
   @media (max-width: $bp-mobile) {
     margin-top: 20px;
   }
-  text-align: center;
+  text-align: left;
 }
 
+// Заголовок и список во всех карточках начинаются от одной линии —
+// левого края иконки (24px), поэтому текст стоит ровной колонкой
 .service-card__list {
-  margin-top: 14px;
+  margin-top: 12px;
   padding-inline: 24px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 8px;
+  align-items: stretch;
+  gap: 6px;
 
   li {
     display: flex;
     align-items: flex-start;
     gap: 6px;
-    width: 100%;
-    max-width: 200px;
     font-family: $font-body;
     font-size: 13px;
-    line-height: 1.4;
+    line-height: 1.35;
     color: $color-text-secondary;
     text-align: left;
 

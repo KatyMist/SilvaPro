@@ -1,0 +1,228 @@
+// ==========================================================================
+// СТРАНИЦЫ УСЛУГ (/proekt-osvoeniya-lesov/, /lesnaya-deklaratsiya/,
+// /lesnaya-otchetnost/). Основная вёрстка текста — из .legal (_legal.scss),
+// здесь только то, чего там нет: крошки, лид, шаги, FAQ, блок связи.
+// Обычный CSS-синтаксис — в style.css попадает 1-в-1.
+// ==========================================================================
+
+.service-page__crumbs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 28px;
+  font-size: 14px;
+  color: #6E6E64;
+}
+
+.service-page__crumbs a {
+  color: #6E6E64;
+  transition: color 0.2s ease;
+}
+
+.service-page__crumbs a:hover {
+  color: #3F4A32;
+}
+
+.service-page__lead {
+  margin-bottom: 8px;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #33352A;
+}
+
+// Шаги работы — нумерация в кружках
+.legal__content .service-page__steps {
+  counter-reset: step;
+  margin-bottom: 14px;
+  padding-left: 0;
+}
+
+.legal__content .service-page__step {
+  counter-increment: step;
+  position: relative;
+  padding-left: 44px;
+  margin-bottom: 14px;
+  min-height: 30px;
+}
+
+.legal__content .service-page__step::before {
+  content: counter(step);
+  top: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: #3F4A32;
+  color: #FFFFFF;
+  font-size: 14px;
+  line-height: 1;
+}
+
+// Вопросы и ответы — раскрывающиеся блоки
+.service-page__faq {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.service-page__faq-item {
+  border: 1px solid #DFD9CC;
+  border-radius: 12px;
+  background-color: #F8F6F1;
+  transition: border-color 0.25s ease;
+}
+
+.service-page__faq-item[open] {
+  border-color: #7C8A5A;
+}
+
+.service-page__faq-item summary {
+  position: relative;
+  padding: 16px 48px 16px 20px;
+  font-size: 17px;
+  font-weight: 500;
+  color: #2B2E22;
+  cursor: pointer;
+  list-style: none;
+}
+
+.service-page__faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.service-page__faq-item summary::after {
+  content: '+';
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 22px;
+  line-height: 1;
+  color: #7C8A5A;
+  transition: transform 0.25s ease;
+}
+
+.service-page__faq-item[open] summary::after {
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.legal__content .service-page__faq-item p {
+  margin: 0;
+  padding: 0 20px 18px;
+}
+
+// Блок связи в конце страницы
+.service-page__cta {
+  margin-top: 48px;
+  padding: 28px;
+  border-radius: 16px;
+  background-color: #F8F6F1;
+  box-shadow: 0 4px 24px rgba(43, 46, 34, 0.06);
+}
+
+.service-page__cta-text {
+  margin-bottom: 18px;
+  font-size: 17px;
+  line-height: 1.6;
+  color: #33352A;
+}
+
+.service-page__cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 24px;
+}
+
+.service-page__cta-link {
+  font-size: 16px;
+  color: #3F4A32;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.service-page__cta-link:hover {
+  color: #4E5C3E;
+}
+
+@media (max-width: 767px) {
+  .service-page__lead {
+    font-size: 16px;
+  }
+
+  .service-page__cta {
+    padding: 22px;
+  }
+}
+
+// Карточки на главной: заголовок-ссылка делает кликабельной всю карточку
+.service-card__link {
+  color: inherit;
+}
+
+.service-card__link::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  border-radius: inherit;
+}
+
+.service-card__link:focus-visible {
+  outline: none;
+}
+
+.service-card:has(.service-card__link:focus-visible) {
+  outline: 2px solid #7C8A5A;
+  outline-offset: 3px;
+}
+
+// ---------------------------------------------------------------
+// Тёмная тема
+// ---------------------------------------------------------------
+[data-theme="dark"] .service-page__crumbs,
+[data-theme="dark"] .service-page__crumbs a {
+  color: var(--dk-text-secondary);
+}
+
+[data-theme="dark"] .service-page__crumbs a:hover,
+[data-theme="dark"] .service-page__cta-link {
+  color: var(--dk-link);
+}
+
+[data-theme="dark"] .service-page__lead,
+[data-theme="dark"] .service-page__cta-text {
+  color: var(--dk-text);
+}
+
+[data-theme="dark"] .legal__content .service-page__step::before {
+  background-color: var(--dk-primary);
+}
+
+[data-theme="dark"] .service-page__faq-item {
+  background-color: var(--dk-bg-card);
+  border-color: var(--dk-border);
+}
+
+[data-theme="dark"] .service-page__faq-item[open] {
+  border-color: var(--dk-accent);
+}
+
+[data-theme="dark"] .service-page__faq-item summary {
+  color: var(--dk-heading);
+}
+
+[data-theme="dark"] .service-page__faq-item summary::after {
+  color: var(--dk-accent);
+}
+
+[data-theme="dark"] .service-page__cta {
+  background-color: var(--dk-bg-card);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme="dark"] .service-page__cta-link:hover {
+  color: var(--dk-heading);
+}
