@@ -46,7 +46,7 @@ A single-page business card website for an independent specialist with over 15 y
 <details open>
 <summary><b>Комплекс услуг · Services</b></summary>
 <br>
-<img src="https://github.com/user-attachments/assets/053a8b73-7a16-4f90-9a60-edcbe5427236" alt="Services section" width="100%">
+<img width="1699" height="758" alt="Снимок экрана — 2026-10-10 в 19 16 57" src="https://github.com/user-attachments/assets/3440e4e9-5029-420c-b6fe-c82be486940d" />
 </details>
 
 <details>
